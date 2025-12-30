@@ -1,0 +1,10 @@
+{
+  "name": "wedding-project",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "cd wedding-site && npm run dev",
+    "build": "cd wedding-site && npm run build",
+    "preview": "cd wedding-site && npm run preview"
+  }
+}
