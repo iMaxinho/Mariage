@@ -236,6 +236,15 @@ const ACTIVITIES = {
         ]
       }
     ]
+  },
+  impatience: {
+    title: 'Impatience',
+    messages: [
+      'N\'hésitez pas à nous indiquer où vous séjournez.',
+      'Les enfants, c\'est la vie : ils sont évidemment les bienvenus !',
+      'Nous avons hâte de partager ce moment avec vous.',
+      'Nous vous transmettrons très bientôt les numéros utiles.'
+    ]
   }
 }
 
@@ -550,6 +559,24 @@ export default function Infos() {
                   </div>
                 </div>
 
+                <div className="framed-card impatience-card">
+                  <div className="framed-card-content">
+                    <h2 className="framed-title">
+                      <img src="/the-logo-activities.png" alt="Impatience" className="the-text" />
+                      <span className="title-main">{ACTIVITIES.impatience.title}</span>
+                    </h2>
+
+                    <div className="impatience-messages">
+                      {ACTIVITIES.impatience.messages.map((message, idx) => (
+                        <p key={idx} className="impatience-message">{message}</p>
+                      ))}
+                    </div>
+
+                    <div className="love-signature">
+                      <img src="/logo.png" alt="Love" className="love-logo" />
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           )}
