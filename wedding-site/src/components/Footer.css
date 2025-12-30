@@ -1,0 +1,50 @@
+.footer {
+  background: #5a4a42;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.footer-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  margin: 0 0 1rem 0;
+}
+
+.footer-text a {
+  color: #d4af37;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.footer-text a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.footer-copyright {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 1.5rem 1rem;
+  }
+
+  .footer-text {
+    font-size: 1rem;
+  }
+
+  .footer-copyright {
+    font-size: 0.85rem;
+  }
+}

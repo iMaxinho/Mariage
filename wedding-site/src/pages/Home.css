@@ -1,0 +1,195 @@
+.home {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.hero-section {
+  text-align: center;
+  padding: 3rem 0;
+  background: linear-gradient(to bottom, rgba(212, 175, 55, 0.1), transparent);
+  border-radius: 20px;
+  margin-bottom: 3rem;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.welcome-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem;
+  color: #5a4a42;
+  margin-bottom: 1rem;
+}
+
+.intro-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  color: #7a6a62;
+  margin-bottom: 3rem;
+  font-style: italic;
+}
+
+.countdown {
+  margin: 3rem 0;
+}
+
+.countdown h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  color: #5a4a42;
+  margin-bottom: 2rem;
+}
+
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.countdown-item {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.countdown-item:hover {
+  transform: translateY(-5px);
+}
+
+.countdown-number {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #d4af37;
+  line-height: 1;
+}
+
+.countdown-label {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  color: #7a6a62;
+  margin-top: 0.5rem;
+}
+
+.info-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.info-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.info-card.highlight {
+  background: linear-gradient(135deg, #d4af37 0%, #f0d98d 100%);
+  color: white;
+}
+
+.info-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  color: #5a4a42;
+  margin-bottom: 1rem;
+}
+
+.info-card.highlight h3 {
+  color: white;
+}
+
+.card-date {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #d4af37;
+  margin: 0.5rem 0;
+}
+
+.info-card.highlight .card-date {
+  color: white;
+  font-weight: 700;
+}
+
+.card-details {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  color: #7a6a62;
+  margin-top: 0.5rem;
+}
+
+.info-card.highlight .card-details {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.invitation-section {
+  text-align: center;
+  margin: 4rem 0 2rem;
+  padding: 2rem;
+  background: rgba(212, 175, 55, 0.05);
+  border-radius: 15px;
+  border: 2px solid rgba(212, 175, 55, 0.2);
+}
+
+.invitation-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  color: #5a4a42;
+  line-height: 1.8;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .home {
+    padding: 1rem;
+  }
+
+  .hero-section {
+    padding: 2rem 1rem;
+  }
+
+  .welcome-text {
+    font-size: 2rem;
+  }
+
+  .intro-text {
+    font-size: 1.1rem;
+  }
+
+  .countdown-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .countdown-number {
+    font-size: 2.5rem;
+  }
+
+  .info-cards {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .invitation-text {
+    font-size: 1.1rem;
+  }
+}

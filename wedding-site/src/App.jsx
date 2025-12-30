@@ -1,5 +1,7 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { useState } from 'react'
 import Navigation from './components/Navigation'
+import Header from './components/Header'
+import Footer from './components/Footer'
 import Home from './pages/Home'
 import Programme from './pages/Programme'
 import Infos from './pages/Infos'
@@ -9,20 +11,36 @@ import TestRsvp from './pages/TestRsvp'
 import './App.css'
 
 function App() {
+  const [currentPage, setCurrentPage] = useState('home')
+
+  const renderPage = () => {
+    switch (currentPage) {
+      case 'home':
+        return <Home />
+      case 'programme':
+        return <Programme />
+      case 'infos':
+        return <Infos />
+      case 'cadeaux':
+        return <Cadeaux />
+      case 'rsvp':
+        return <Rsvp />
+      case 'test-rsvp':
+        return <TestRsvp />
+      default:
+        return <Home />
+    }
+  }
+
   return (
-    <BrowserRouter>
-      <Navigation />
+    <div className="app">
+      <Header />
+      <Navigation currentPage={currentPage} onNavigate={setCurrentPage} />
       <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/programme" element={<Programme />} />
-          <Route path="/infos" element={<Infos />} />
-          <Route path="/cadeaux" element={<Cadeaux />} />
-          <Route path="/rsvp" element={<Rsvp />} />
-          <Route path="/test-rsvp" element={<TestRsvp />} />
-        </Routes>
+        {renderPage()}
       </main>
-    </BrowserRouter>
+      <Footer />
+    </div>
   )
 }
 

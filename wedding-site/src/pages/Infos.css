@@ -1,0 +1,128 @@
+.infos {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.info-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.info-section {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.info-section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.info-section.highlight {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(212, 175, 55, 0.05));
+  border: 2px solid #d4af37;
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  color: #5a4a42;
+  margin: 0 0 1rem 0;
+}
+
+.section-content {
+  font-family: 'Cormorant Garamond', serif;
+  color: #5a4a42;
+}
+
+.section-content h4 {
+  font-size: 1.3rem;
+  color: #d4af37;
+  margin: 1.5rem 0 0.8rem 0;
+}
+
+.section-content h4:first-child {
+  margin-top: 0;
+}
+
+.section-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin: 0.8rem 0;
+}
+
+.section-content ul {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.section-content li {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin: 0.5rem 0;
+}
+
+.section-content strong {
+  color: #5a4a42;
+  font-weight: 600;
+}
+
+.info-note {
+  background: rgba(212, 175, 55, 0.1);
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid #d4af37;
+  font-style: italic;
+  margin: 1rem 0 !important;
+}
+
+.hashtag {
+  font-family: 'Homemade Apple', cursive;
+  font-size: 1.5rem;
+  color: #d4af37;
+  text-align: center;
+  margin: 1.5rem 0 !important;
+}
+
+.section-content a {
+  color: #d4af37;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.section-content a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .infos {
+    padding: 1rem;
+  }
+
+  .info-section {
+    padding: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .section-content h4 {
+    font-size: 1.2rem;
+  }
+
+  .section-content p,
+  .section-content li {
+    font-size: 1rem;
+  }
+
+  .hashtag {
+    font-size: 1.2rem;
+  }
+}
