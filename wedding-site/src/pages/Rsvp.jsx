@@ -132,7 +132,9 @@ export default function Rsvp() {
       console.error('❌ Full error object:', error)
       let errorMessage = 'Une erreur s\'est produite. Veuillez réessayer.'
 
-      if (error.message) {
+      if (error.message === 'Failed to fetch' || error.name === 'TypeError') {
+        errorMessage = '❌ Impossible de contacter le serveur. Veuillez vérifier que Supabase est configuré correctement. Consultez CONFIGURATION_REQUISE.md pour plus d\'informations.'
+      } else if (error.message) {
         errorMessage = error.message
       } else if (error.error_description) {
         errorMessage = error.error_description
