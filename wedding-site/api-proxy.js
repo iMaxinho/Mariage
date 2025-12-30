@@ -16,39 +16,41 @@ app.post('/api/submit-rsvp', async (req, res) => {
   try {
     console.log('Received RSVP submission:', req.body);
 
-    const { guest_name, email, dietary_restrictions, message, attending_mairie, guests_mairie, attending_corse, guests_corse, attending_brunch, guests_brunch, plus_one_name } = req.body;
+    const {
+      guest_name,
+      email,
+      dietary_restrictions,
+      message,
+      attending_mairie,
+      guests_mairie,
+      attending_corse,
+      guests_corse,
+      attending_brunch,
+      guests_brunch,
+      plus_one_name
+    } = req.body;
 
-    const sql = `
-      INSERT INTO rsvps (
-        guest_name, email, dietary_restrictions, message,
-        attending_mairie, guests_mairie,
-        attending_corse, guests_corse,
-        attending_brunch, guests_brunch,
-        plus_one_name
-      ) VALUES (
-        '${guest_name.replace(/'/g, "''")}',
-        '${email.replace(/'/g, "''")}',
-        ${dietary_restrictions ? `'${dietary_restrictions.replace(/'/g, "''")}'` : 'NULL'},
-        ${message ? `'${message.replace(/'/g, "''")}'` : 'NULL'},
-        ${attending_mairie},
-        ${guests_mairie},
-        ${attending_corse},
-        ${guests_corse},
-        ${attending_brunch},
-        ${guests_brunch},
-        ${plus_one_name ? `'${plus_one_name.replace(/'/g, "''")}'` : 'NULL'}
-      )
-      RETURNING *;
-    `;
-
-    const response = await fetch(`${SUPABASE_URL}/rest/v1/rpc/exec_sql`, {
+    const response = await fetch(`${SUPABASE_URL}/rest/v1/rpc/insert_rsvp`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'apikey': SUPABASE_KEY,
-        'Authorization': `Bearer ${SUPABASE_KEY}`
+        'Authorization': `Bearer ${SUPABASE_KEY}`,
+        'Prefer': 'return=representation'
       },
-      body: JSON.stringify({ query: sql })
+      body: JSON.stringify({
+        p_guest_name: guest_name,
+        p_email: email,
+        p_attending_mairie: attending_mairie,
+        p_guests_mairie: guests_mairie,
+        p_attending_corse: attending_corse,
+        p_guests_corse: guests_corse,
+        p_attending_brunch: attending_brunch,
+        p_guests_brunch: guests_brunch,
+        p_plus_one_name: plus_one_name || null,
+        p_dietary_restrictions: dietary_restrictions || null,
+        p_message: message || null
+      })
     });
 
     if (!response.ok) {
@@ -58,7 +60,7 @@ app.post('/api/submit-rsvp', async (req, res) => {
     }
 
     const data = await response.json();
-    console.log('RSVP inserted successfully');
+    console.log('RSVP inserted successfully:', data);
     res.json({ success: true, data });
   } catch (error) {
     console.error('Server error:', error);
