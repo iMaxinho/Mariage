@@ -3,8 +3,9 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
+    "postinstall": "cd wedding-site && npm install",
     "dev": "cd wedding-site && npm run dev",
-    "build": "cd wedding-site && npm run build",
+    "build": "cd wedding-site && npm install && npm run build",
     "preview": "cd wedding-site && npm run preview"
   }
 }

@@ -95,3 +95,12 @@ button:focus-visible {
   background-color: var(--color-sky-blue);
   color: var(--color-white);
 }
+
+.decorative-separator {
+  height: 3px;
+  background: url('/logo-7.png') center repeat-x;
+  background-size: auto 3px;
+  margin: 40px auto;
+  max-width: 300px;
+  opacity: 0.5;
+}
