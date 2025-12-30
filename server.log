@@ -1,18 +1,4 @@
-
-> wedding-site@0.0.0 dev
-> concurrently "npm run api" "npx vite"
-
-[0] 
-[0] > wedding-site@0.0.0 api
-[0] > node server.js
-[0] 
-[0] Connecting to database...
-[0] API server running on http://localhost:3001
-[0] Health check: http://localhost:3001/api/health
-[1] 
-[1]   VITE v7.2.6  ready in 271 ms
-[1] 
-[1]   ➜  Local:   http://localhost:4173/
-[1]   ➜  Network: http://169.254.8.1:4173/
-[1]   ➜  Network: http://169.254.9.1:4173/
-[1]   ➜  Network: http://169.254.169.1:4173/
+npm warn exec The following package was not found and will be installed: serve@14.2.5
+ INFO  Accepting connections at http://localhost:4173
+ HTTP  12/22/2025 7:41:26 PM ::1 GET /
+ HTTP  12/22/2025 7:41:26 PM ::1 Returned 200 in 18 ms
