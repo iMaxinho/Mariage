@@ -62,16 +62,27 @@
 .timeline-dot {
   width: 80px;
   height: 80px;
-  background: url('/logo-8.png') center center no-repeat;
-  background-size: contain;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  filter: drop-shadow(0 2px 8px rgba(112, 161, 190, 0.15));
+}
+
+.shell-number {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.number-text {
+  position: relative;
+  z-index: 1;
   font-weight: 700;
   color: #70a1be;
   font-size: 1.3rem;
-  z-index: 2;
-  filter: drop-shadow(0 2px 8px rgba(112, 161, 190, 0.15));
+  font-family: 'Montserrat', sans-serif;
 }
 
 .timeline-line {
@@ -281,6 +292,9 @@
   .timeline-dot {
     width: 70px;
     height: 70px;
+  }
+
+  .number-text {
     font-size: 1.1rem;
   }
 
@@ -320,6 +334,9 @@
   .timeline-dot {
     width: 60px;
     height: 60px;
+  }
+
+  .number-text {
     font-size: 1rem;
   }
 

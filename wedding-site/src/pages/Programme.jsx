@@ -12,7 +12,10 @@ export default function Programme() {
         <div className="timeline">
           <div className="timeline-item">
             <div className="timeline-marker">
-              <div className="timeline-dot">01</div>
+              <div className="timeline-dot">
+                <img src="/logo (8).png" alt="" className="shell-number" />
+                <span className="number-text">1</span>
+              </div>
               <div className="timeline-line"></div>
             </div>
             <div className="timeline-content">
@@ -46,7 +49,10 @@ export default function Programme() {
 
           <div className="timeline-item highlight">
             <div className="timeline-marker">
-              <div className="timeline-dot">02</div>
+              <div className="timeline-dot">
+                <img src="/logo (8).png" alt="" className="shell-number" />
+                <span className="number-text">2</span>
+              </div>
               <div className="timeline-line"></div>
             </div>
             <div className="timeline-content">
@@ -99,7 +105,10 @@ export default function Programme() {
 
           <div className="timeline-item">
             <div className="timeline-marker">
-              <div className="timeline-dot">03</div>
+              <div className="timeline-dot">
+                <img src="/logo (8).png" alt="" className="shell-number" />
+                <span className="number-text">3</span>
+              </div>
             </div>
             <div className="timeline-content">
               <div className="date-badge">Dimanche 7 Juin 2026</div>
