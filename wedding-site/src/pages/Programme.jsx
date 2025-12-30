@@ -28,25 +28,16 @@ export default function Programme() {
                 </div>
                 <div className="detail-row">
                   <span className="icon">📍</span>
-                  <span>
-                    <a
-                      href="https://www.google.com/maps/place/96+Avenue+Achille+Peretti,+92200+Neuilly-sur-Seine"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{ color: 'inherit', textDecoration: 'underline' }}
-                    >
-                      Mairie de Neuilly-sur-Seine, 96 avenue Achille Peretti, 92200
-                    </a>
-                  </span>
+                  <span>Mairie de Neuilly-sur-Seine, 92200</span>
                 </div>
                 <p className="description">
-                  Nous nous dirons oui à la mairie de Neuilly-Sur-Seine.
-                  La Mairie sera suivie d'un cocktail convivial.
-                  Cette première journée marquera le début de nos célébrations.
+                  Rejoignez-nous pour la cérémonie officielle à la mairie, suivie d'un cocktail dans les jardins.
+                  Ce premier événement marquera le début de nos célébrations.
                 </p>
                 <div className="info-box">
                   <h4>Informations pratiques</h4>
                   <ul>
+                    <li>Tenue de ville élégante</li>
                     <li>Accès en métro: Ligne 1, station Les Sablons</li>
                     <li>Parking disponible à proximité</li>
                     <li>Cocktail de 16h30 à 19h00</li>
@@ -74,24 +65,37 @@ export default function Programme() {
                 </div>
                 <div className="detail-row">
                   <span className="icon">📍</span>
-                  <span>
-                    <a
-                      href="https://www.google.com/maps/search/Da+Mare+By+Sea+Lounge+Palombaggia+Porto+Vecchio/@41.5891,9.3558,15z"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{ color: 'inherit', textDecoration: 'underline' }}
-                    >
-                      Plage Da Mare, Palombaggia, Corse du Sud
-                    </a>
-                  </span>
+                  <span>Plage Da Mare, Palombaggia, Corse du Sud</span>
                 </div>
                 <p className="description">
-                  La cérémonie aura lieu sur la magnifique plage de Palombaggia et sera suivie d'un dîner et d'une soirée les pieds dans le sable.
+                  Notre cérémonie principale aura lieu sur la magnifique plage de Palombaggia.
+                  Célébration en bord de mer au coucher du soleil, suivie d'un dîner et d'une soirée dansante.
                 </p>
+                <div className="schedule">
+                  <h4>Déroulement de la journée</h4>
+                  <div className="schedule-item">
+                    <span className="schedule-time">17h30</span>
+                    <span className="schedule-desc">Cérémonie laïque sur la plage</span>
+                  </div>
+                  <div className="schedule-item">
+                    <span className="schedule-time">19h00</span>
+                    <span className="schedule-desc">Vin d'honneur et photos</span>
+                  </div>
+                  <div className="schedule-item">
+                    <span className="schedule-time">20h30</span>
+                    <span className="schedule-desc">Dîner de gala</span>
+                  </div>
+                  <div className="schedule-item">
+                    <span className="schedule-time">23h00</span>
+                    <span className="schedule-desc">Soirée dansante</span>
+                  </div>
+                </div>
                 <div className="info-box">
                   <h4>À prévoir</h4>
                   <ul>
                     <li>Tenue élégante et légère (pensez au sable!)</li>
+                    <li>Protection solaire recommandée</li>
+                    <li>Châle ou veste pour la soirée</li>
                     <li>Chaussures plates conseillées pour la plage</li>
                   </ul>
                 </div>
@@ -116,40 +120,33 @@ export default function Programme() {
                 </div>
                 <div className="detail-row">
                   <span className="icon">📍</span>
-                  <span>
-                    <a
-                      href="https://maps.app.goo.gl/TgvSLz7VwqLrx72h8"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{ color: 'inherit', textDecoration: 'underline' }}
-                    >
-                      Plage La Bohème, Bonifacio
-                    </a>
-                  </span>
+                  <span>Plage La Bohème, Bonifacio</span>
                 </div>
                 <p className="description">
                   Prolongeons la fête avec un brunch décontracté en bord de mer.
-                  Moment parfait pour se retrouver et profiter des derniers instants en Corse.
+                  Moment parfait pour se retrouver et partager nos souvenirs de la veille.
                 </p>
                 <div className="info-box">
                   <h4>Informations</h4>
                   <ul>
-                    <li>Dress code white party même le maillot</li>
-                    <li>Ambiance chill en bord de mer</li>
+                    <li>Tenue décontractée</li>
+                    <li>Buffet et boissons sur place</li>
+                    <li>Ambiance relax en bord de mer</li>
+                    <li>Fin prévue vers 15h00</li>
                   </ul>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div className="final-note">
-        <h3>Une question sur le programme?</h3>
-        <p>
-          N'hésitez pas à nous contacter si vous avez besoin de plus d'informations
-          sur l'un de ces événements.
-        </p>
+        <div className="final-note">
+          <h3>Une question sur le programme?</h3>
+          <p>
+            N'hésitez pas à nous contacter si vous avez besoin de plus d'informations
+            sur l'un de ces événements.
+          </p>
+        </div>
       </div>
     </div>
   )

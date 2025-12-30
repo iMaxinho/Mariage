@@ -49,16 +49,7 @@ export default function Home() {
                 </div>
                 <div className="detail-item">
                   <span className="detail-label">Lieu</span>
-                  <span className="detail-value">
-                    <a
-                      href="https://www.google.com/maps/place/96+Avenue+Achille+Peretti,+92200+Neuilly-sur-Seine"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{ color: 'inherit', textDecoration: 'underline' }}
-                    >
-                      Mairie de Neuilly-sur-Seine
-                    </a>
-                  </span>
+                  <span className="detail-value">Mairie de Neuilly-sur-Seine</span>
                 </div>
               </div>
             </div>
@@ -82,16 +73,7 @@ export default function Home() {
                 </div>
                 <div className="detail-item">
                   <span className="detail-label">Lieu</span>
-                  <span className="detail-value">
-                    <a
-                      href="https://www.google.com/maps/search/Da+Mare+By+Sea+Lounge+Palombaggia+Porto+Vecchio/@41.5891,9.3558,15z"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{ color: 'inherit', textDecoration: 'underline' }}
-                    >
-                      Plage Da Mare, Palombaggia
-                    </a>
-                  </span>
+                  <span className="detail-value">Plage Da Mare, Palombaggia</span>
                 </div>
               </div>
             </div>
@@ -115,16 +97,7 @@ export default function Home() {
                 </div>
                 <div className="detail-item">
                   <span className="detail-label">Lieu</span>
-                  <span className="detail-value">
-                    <a
-                      href="https://maps.app.goo.gl/TgvSLz7VwqLrx72h8"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{ color: 'inherit', textDecoration: 'underline' }}
-                    >
-                      Plage La Bohème, Bonifacio
-                    </a>
-                  </span>
+                  <span className="detail-value">Plage La Bohème, Bonifacio</span>
                 </div>
               </div>
             </div>

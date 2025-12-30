@@ -47,8 +47,8 @@
 }
 
 .timeline-item.highlight .timeline-content {
-  background: white;
-  border-left: 1px solid #e5eef5;
+  background: linear-gradient(135deg, #f0f7fa 0%, #ffffff 100%);
+  border-left: 3px solid #70a1be;
 }
 
 .timeline-marker {
@@ -93,7 +93,6 @@
   opacity: 0.6;
 }
 
-.timeline-item:nth-child(2) .timeline-line,
 .timeline-item:last-child .timeline-line {
   display: none;
 }
@@ -246,13 +245,12 @@
 
 .final-note {
   text-align: center;
-  padding: 100px 20px;
-  min-height: 400px;
+  padding: 60px 40px;
   background: url('/design_sans_titre copy.png') center center;
   background-size: cover;
-  background-repeat: no-repeat;
   background-position: center;
   color: white;
+  margin-top: 40px;
   position: relative;
 }
 
