@@ -62,27 +62,16 @@
 .timeline-dot {
   width: 80px;
   height: 80px;
+  background: url('/logo-8.png') center center no-repeat;
+  background-size: contain;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  filter: drop-shadow(0 2px 8px rgba(112, 161, 190, 0.15));
-}
-
-.shell-number {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.number-text {
-  position: relative;
-  z-index: 1;
   font-weight: 700;
   color: #70a1be;
   font-size: 1.3rem;
-  font-family: 'Montserrat', sans-serif;
+  z-index: 2;
+  filter: drop-shadow(0 2px 8px rgba(112, 161, 190, 0.15));
 }
 
 .timeline-line {
@@ -246,29 +235,9 @@
 .final-note {
   text-align: center;
   padding: 60px 40px;
-  background: url('/design_sans_titre copy.png') center center;
-  background-size: auto 100%;
-  background-repeat: repeat-x;
-  background-position: center;
+  background: linear-gradient(135deg, #70a1be 0%, #5a8aa5 100%);
   color: white;
   margin-top: 40px;
-  position: relative;
-}
-
-.final-note::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(112, 161, 190, 0.3);
-  z-index: 0;
-}
-
-.final-note > * {
-  position: relative;
-  z-index: 1;
 }
 
 .final-note h3 {
@@ -277,16 +246,13 @@
   margin: 0 0 16px 0;
   letter-spacing: 1px;
   font-family: 'Cormorant Garamond', serif;
-  color: white;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .final-note p {
   font-size: 1.05rem;
   margin: 0;
+  opacity: 0.95;
   line-height: 1.7;
-  color: white;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 768px) {
@@ -315,9 +281,6 @@
   .timeline-dot {
     width: 70px;
     height: 70px;
-  }
-
-  .number-text {
     font-size: 1.1rem;
   }
 
@@ -357,9 +320,6 @@
   .timeline-dot {
     width: 60px;
     height: 60px;
-  }
-
-  .number-text {
     font-size: 1rem;
   }
 
