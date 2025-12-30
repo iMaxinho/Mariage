@@ -33,9 +33,19 @@ export default function Rsvp() {
     setSubmitStatus(null)
 
     try {
-      const { error } = await supabase
-        .from('rsvps')
-        .insert([formData])
+      const { data, error } = await supabase.rpc('insert_rsvp', {
+        p_guest_name: formData.guest_name,
+        p_email: formData.email,
+        p_attending_mairie: formData.attending_mairie,
+        p_guests_mairie: formData.guests_mairie,
+        p_attending_corse: formData.attending_corse,
+        p_guests_corse: formData.guests_corse,
+        p_attending_brunch: formData.attending_brunch,
+        p_guests_brunch: formData.guests_brunch,
+        p_plus_one_name: formData.plus_one_name || null,
+        p_dietary_restrictions: formData.dietary_restrictions || null,
+        p_message: formData.message || null
+      })
 
       if (error) throw error
 
