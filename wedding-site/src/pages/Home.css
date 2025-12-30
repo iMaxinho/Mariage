@@ -4,7 +4,7 @@
 
 .hero {
   min-height: 100vh;
-  background: linear-gradient(to bottom, #f8fbfd 0%, #ffffff 100%);
+  background: linear-gradient(to bottom, var(--color-cream) 0%, var(--color-white) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,37 +35,39 @@
 }
 
 .shell-logo {
-  width: 120px;
-  height: 120px;
+  width: 140px;
+  height: 140px;
   object-fit: contain;
-  filter: drop-shadow(0 4px 12px rgba(112, 161, 190, 0.15));
+  filter: drop-shadow(0 4px 16px rgba(168, 197, 218, 0.2));
 }
 
 .hero-title {
   font-size: 4rem;
   font-weight: 300;
   margin: 0 0 20px 0;
-  color: #2c3e50;
+  color: var(--color-text-dark);
   letter-spacing: 4px;
   line-height: 1.2;
   font-family: 'Cormorant Garamond', serif;
 }
 
 .ampersand {
-  font-style: italic;
-  color: #70a1be;
+  font-family: 'Great Vibes', cursive;
+  color: var(--color-aqua);
   margin: 0 16px;
   font-weight: 400;
+  font-size: 0.9em;
 }
 
 .hero-subtitle {
   font-size: 1.25rem;
-  color: #5a7a90;
+  color: var(--color-text-light);
   margin: 0 0 30px 0;
   font-weight: 400;
   letter-spacing: 3px;
   text-transform: uppercase;
   font-size: 0.95rem;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .hero-dates {
@@ -74,7 +76,7 @@
 
 .date-line {
   font-size: 1rem;
-  color: #7d95a8;
+  color: var(--color-taupe);
   margin: 8px 0;
   letter-spacing: 1.5px;
   font-weight: 300;
@@ -82,7 +84,7 @@
 
 .save-the-date {
   padding: 100px 20px;
-  background: white;
+  background: var(--color-white);
   text-align: center;
 }
 
@@ -93,8 +95,8 @@
 
 .section-title {
   font-size: 2.5rem;
-  font-weight: 300;
-  color: #2c3e50;
+  font-weight: 400;
+  color: var(--color-text-dark);
   margin: 0 0 24px 0;
   letter-spacing: 2px;
   font-family: 'Cormorant Garamond', serif;
@@ -102,7 +104,7 @@
 
 .section-intro {
   font-size: 1.1rem;
-  color: #5a7a90;
+  color: var(--color-text-light);
   line-height: 1.8;
   max-width: 700px;
   margin: 0 auto;
@@ -110,26 +112,27 @@
 
 .events-timeline {
   padding: 80px 20px 120px;
-  background: linear-gradient(to bottom, white 0%, #f8fbfd 100%);
+  background: linear-gradient(to bottom, var(--color-white) 0%, var(--color-cream) 100%);
 }
 
 .event-card {
-  background: white;
+  background: var(--color-white);
   border-radius: 0;
   margin-bottom: 60px;
   padding: 60px 50px;
   position: relative;
-  border-left: 1px solid #e5eef5;
+  border-left: 3px solid var(--color-beige);
+  border-image: linear-gradient(to bottom, var(--color-sky-blue), var(--color-beige)) 1;
   transition: all 0.4s ease;
 }
 
 .event-card.featured {
-  border-left: 3px solid #70a1be;
+  border-left: 3px solid var(--color-aqua);
 }
 
 .event-card:hover {
   transform: translateX(8px);
-  box-shadow: -8px 12px 40px rgba(112, 161, 190, 0.08);
+  box-shadow: -8px 12px 40px rgba(168, 197, 218, 0.15);
 }
 
 .event-number {
@@ -138,15 +141,16 @@
   top: 60px;
   width: 40px;
   height: 40px;
-  background: white;
-  border: 2px solid #70a1be;
+  background: var(--color-white);
+  border: 2px solid var(--color-taupe);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 600;
-  color: #70a1be;
+  color: var(--color-taupe);
   font-size: 0.9rem;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .event-content {
@@ -155,8 +159,8 @@
 
 .event-title {
   font-size: 2rem;
-  font-weight: 300;
-  color: #2c3e50;
+  font-weight: 400;
+  color: var(--color-text-dark);
   margin: 0 0 12px 0;
   letter-spacing: 1px;
   font-family: 'Cormorant Garamond', serif;
@@ -164,17 +168,18 @@
 
 .event-date {
   font-size: 1rem;
-  color: #70a1be;
+  color: var(--color-aqua);
   margin: 0 0 20px 0;
   letter-spacing: 2px;
   text-transform: uppercase;
   font-weight: 500;
   font-size: 0.85rem;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .event-description {
   font-size: 1.05rem;
-  color: #5a7a90;
+  color: var(--color-text-light);
   line-height: 1.8;
   margin: 0 0 32px 0;
   max-width: 600px;
@@ -195,28 +200,29 @@
 
 .detail-label {
   font-size: 0.75rem;
-  color: #7d95a8;
+  color: var(--color-taupe);
   text-transform: uppercase;
   letter-spacing: 1.5px;
   font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .detail-value {
   font-size: 1rem;
-  color: #2c3e50;
+  color: var(--color-text-dark);
   font-weight: 400;
 }
 
 .cta-section {
   padding: 100px 20px;
-  background: linear-gradient(135deg, #70a1be 0%, #5a8aa5 100%);
+  background: linear-gradient(135deg, var(--color-aqua) 0%, var(--color-sky-blue) 100%);
   text-align: center;
-  color: white;
+  color: var(--color-white);
 }
 
 .cta-title {
   font-size: 2.5rem;
-  font-weight: 300;
+  font-weight: 400;
   margin: 0 0 20px 0;
   letter-spacing: 2px;
   font-family: 'Cormorant Garamond', serif;
@@ -254,20 +260,20 @@
 }
 
 .btn-primary {
-  background: white;
-  color: #70a1be;
+  background: var(--color-white);
+  color: var(--color-aqua);
 }
 
 .btn-primary:hover {
-  background: #f8fbfd;
+  background: var(--color-cream);
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
 .btn-secondary {
   background: transparent;
-  color: white;
-  border: 2px solid white;
+  color: var(--color-white);
+  border: 2px solid var(--color-white);
 }
 
 .btn-secondary:hover {

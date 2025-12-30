@@ -7,7 +7,9 @@ export default function Home() {
       <section className="hero">
         <div className="hero-content">
           <div className="hero-logo">
-            <img src="/coquillage vide.pdf" alt="Shell logo" className="shell-logo" />
+            <svg className="shell-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <path d="M50 10 L60 40 L90 40 L65 60 L75 90 L50 70 L25 90 L35 60 L10 40 L40 40 Z" fill="#d4a574" />
+            </svg>
           </div>
           <h1 className="hero-title">
             Allison <span className="ampersand">&</span> Maxime
