@@ -1,4 +1,19 @@
-npm warn exec The following package was not found and will be installed: serve@14.2.5
- INFO  Accepting connections at http://localhost:4173
- HTTP  12/22/2025 7:41:26 PM ::1 GET /
- HTTP  12/22/2025 7:41:26 PM ::1 Returned 200 in 18 ms
+Creating Supabase client...
+API server running on http://localhost:3001
+Health check: http://localhost:3001/api/health
+Received RSVP submission: {
+  guest_name: 'Test Supabase Server',
+  email: 'testsupa@local.com',
+  attending_mairie: true,
+  guests_mairie: 1,
+  attending_corse: false,
+  guests_corse: 0,
+  attending_brunch: false,
+  guests_brunch: 0
+}
+Database error: {
+  code: 'PGRST205',
+  details: null,
+  hint: null,
+  message: "Could not find the table 'public.rsvps' in the schema cache"
+}
