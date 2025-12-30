@@ -47,8 +47,8 @@
 }
 
 .timeline-item.highlight .timeline-content {
-  background: linear-gradient(135deg, #f0f7fa 0%, #ffffff 100%);
-  border-left: 3px solid #70a1be;
+  background: white;
+  border-left: 1px solid #e5eef5;
 }
 
 .timeline-marker {
@@ -93,6 +93,7 @@
   opacity: 0.6;
 }
 
+.timeline-item:nth-child(2) .timeline-line,
 .timeline-item:last-child .timeline-line {
   display: none;
 }
@@ -245,10 +246,30 @@
 
 .final-note {
   text-align: center;
-  padding: 60px 40px;
-  background: linear-gradient(135deg, #70a1be 0%, #5a8aa5 100%);
+  padding: 100px 20px;
+  min-height: 400px;
+  background: url('/design_sans_titre copy.png') center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   color: white;
-  margin-top: 40px;
+  position: relative;
+}
+
+.final-note::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(112, 161, 190, 0.3);
+  z-index: 0;
+}
+
+.final-note > * {
+  position: relative;
+  z-index: 1;
 }
 
 .final-note h3 {
@@ -257,13 +278,16 @@
   margin: 0 0 16px 0;
   letter-spacing: 1px;
   font-family: 'Cormorant Garamond', serif;
+  color: white;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .final-note p {
   font-size: 1.05rem;
   margin: 0;
-  opacity: 0.95;
   line-height: 1.7;
+  color: white;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 768px) {

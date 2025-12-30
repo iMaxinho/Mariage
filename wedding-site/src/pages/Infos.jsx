@@ -5,16 +5,20 @@ const LOCATIONS = {
   palombaggia: {
     name: 'Plage Da Mare',
     address: 'Palombaggia, Porto-Vecchio 20137',
+    addressLink: 'https://www.google.com/maps/dir/?api=1&destination=Plage+Da+Mare+Palombaggia+Porto-Vecchio',
     lat: 42.5897,
     lng: 9.3020,
-    description: 'Cérémonie - Samedi 6 juin à 18h'
+    description: 'Cérémonie - Samedi 6 juin à 17h30',
+    image: '/damare.jpg'
   },
   bonifacio: {
     name: 'Plage La Boheme',
     address: 'Bonifacio 20169',
+    addressLink: 'https://www.google.com/maps/dir/?api=1&destination=Plage+La+Boheme+Bonifacio',
     lat: 41.3922,
     lng: 9.1575,
-    description: 'Brunch - Dimanche 7 juin à 11h30'
+    description: 'Brunch - Dimanche 7 juin à 12h',
+    image: '/la-boheme-bonifacio-photo-google-1-1753279872_2.jpg'
   }
 }
 
@@ -300,21 +304,23 @@ export default function Infos() {
                 {Object.entries(LOCATIONS).map(([key, location]) => (
                   selectedLocation === key && (
                     <div key={key} className="location-info">
-                      <div className="location-info-text">
-                        <h3>{location.name}</h3>
-                        <p className="address">{location.address}</p>
-                        <p className="description">{location.description}</p>
-                      </div>
-                      <div className="map-container">
-                        <iframe
-                          width="100%"
-                          height="400"
-                          style={{ border: 0, borderRadius: '8px' }}
-                          loading="lazy"
-                          allowFullScreen
-                          referrerPolicy="no-referrer-when-downgrade"
-                          src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2881.5638${Math.random()}!2d${location.lng}!3d${location.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s!2s${location.name.replace(/\s+/g, '+')}%20${location.address.replace(/\s+/g, '+')}!5e0!3m2!1sfr!2sfr!4v${Math.random()}`}
-                        />
+                      <div className="location-header">
+                        <div className="location-info-text">
+                          <h3>{location.name}</h3>
+                          {location.addressLink ? (
+                            <a href={location.addressLink} target="_blank" rel="noopener noreferrer" className="address-link">
+                              {location.address}
+                            </a>
+                          ) : (
+                            <p className="address">{location.address}</p>
+                          )}
+                          <p className="description">{location.description}</p>
+                        </div>
+                        {location.image && (
+                          <div className="location-image">
+                            <img src={location.image} alt={location.name} />
+                          </div>
+                        )}
                       </div>
                     </div>
                   )
@@ -334,7 +340,7 @@ export default function Infos() {
                         <span className="discount-badge">{hotel.discount}</span>
                       )}
                     </div>
-                    <p className="distance">🚗 {hotel.distance}</p>
+                    <p className="distance"><img src="/ifa-f9-6952180_640.webp" alt="car" className="car-icon" /> {hotel.distance}</p>
                     <div className="rating">
                       {'⭐'.repeat(Math.floor(hotel.rating))}
                       <span className="rating-value">{hotel.rating}</span>
@@ -364,7 +370,7 @@ export default function Infos() {
                   <div key={residence.id} className="accommodation-card">
                     <h3>{residence.name}</h3>
                     <p className="description">{residence.description}</p>
-                    <p className="distance">🚗 {residence.distance}</p>
+                    <p className="distance"><img src="/ifa-f9-6952180_640.webp" alt="car" className="car-icon" /> {residence.distance}</p>
                     <div className="rating">
                       {'⭐'.repeat(Math.floor(residence.rating))}
                       <span className="rating-value">{residence.rating}</span>

@@ -103,8 +103,14 @@
 }
 
 .location-info {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.location-header {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 300px;
   gap: 30px;
   align-items: start;
 }
@@ -123,11 +129,40 @@
   line-height: 1.6;
 }
 
+.address-link {
+  display: inline-block;
+  font-size: 16px;
+  color: #8b9d83;
+  margin: 0 0 16px 0;
+  line-height: 1.6;
+  text-decoration: underline;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.address-link:hover {
+  color: #7a8b73;
+}
+
 .location-info-text .description {
   font-size: 15px;
   color: #8b9d83;
   margin: 0;
   font-weight: 500;
+}
+
+.location-image {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.location-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
 }
 
 .map-container {
@@ -203,6 +238,15 @@
   color: #8b9d83;
   margin: 12px 0;
   font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.car-icon {
+  height: 1.2em;
+  width: auto;
+  vertical-align: middle;
 }
 
 .rating {
@@ -349,7 +393,7 @@
 
 .framed-title {
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   font-weight: 400;
   color: #2c3e50;
   text-align: center;
@@ -539,8 +583,11 @@
   }
 
   .location-info {
-    grid-template-columns: 1fr;
     gap: 20px;
+  }
+
+  .location-header {
+    grid-template-columns: 1fr;
   }
 
   .map-container {
