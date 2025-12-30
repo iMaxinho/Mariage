@@ -1,0 +1,24 @@
+
+> wedding-project@1.0.0 dev
+> cd wedding-site && npm run dev
+
+
+> wedding-site@0.0.0 dev
+> concurrently "npm run api" "npx vite"
+
+[0] 
+[0] > wedding-site@0.0.0 api
+[0] > node server.js
+[0] 
+[0] Connecting to database...
+[0] API server running on http://localhost:3001
+[0] Health check: http://localhost:3001/api/health
+[1] 
+[1]   VITE v7.2.6  ready in 398 ms
+[1] 
+[1]   ➜  Local:   http://localhost:5173/
+[1]   ➜  Network: http://169.254.8.1:5173/
+[1]   ➜  Network: http://169.254.9.1:5173/
+[1]   ➜  Network: http://169.254.169.1:5173/
+[1] 2:53:33 PM [vite] (client) page reload public/index-simple.html
+[1] 2:53:55 PM [vite] (client) page reload test-direct.html
