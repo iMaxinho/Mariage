@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { supabase } from '../lib/supabase'
 import './Rsvp.css'
 
 export default function Rsvp() {
@@ -33,15 +32,25 @@ export default function Rsvp() {
     setSubmitStatus(null)
 
     try {
-      const { data, error } = await supabase
-        .from('rsvps')
-        .insert([formData])
+      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
+      const functionUrl = `${supabaseUrl}/functions/v1/submit-rsvp`
 
-      if (error) {
-        console.error('Supabase error:', error)
-        throw error
+      const response = await fetch(functionUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      })
+
+      const result = await response.json()
+
+      if (!response.ok) {
+        console.error('API error:', result)
+        throw new Error(result.error || 'Erreur lors de la soumission')
       }
-      console.log('Insert successful:', data)
+
+      console.log('Submission successful:', result)
 
       const attendingAny = formData.attending_mairie || formData.attending_corse || formData.attending_brunch
 
