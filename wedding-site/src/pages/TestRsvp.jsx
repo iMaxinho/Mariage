@@ -1,150 +1,147 @@
-import { useState, useEffect } from 'react';
-import './TestRsvp.css';
+import { useState } from 'react'
+import { supabase } from '../lib/supabase'
 
-function TestRsvp() {
-  const [rsvps, setRsvps] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+export default function TestRsvp() {
+  const [result, setResult] = useState(null)
+  const [loading, setLoading] = useState(false)
 
-  useEffect(() => {
-    fetchRsvps();
-  }, []);
+  const testConnection = async () => {
+    setLoading(true)
+    setResult(null)
 
-  const fetchRsvps = async () => {
     try {
-      const response = await fetch('/api/get-rsvps');
-      if (response.ok) {
-        const data = await response.json();
-        setRsvps(data);
+      const { data, error } = await supabase
+        .from('rsvps')
+        .select('count')
+        .limit(1)
+
+      if (error) {
+        setResult({
+          success: false,
+          message: 'Erreur de connexion',
+          error: error
+        })
       } else {
-        setError('Erreur lors du chargement des réponses');
+        setResult({
+          success: true,
+          message: 'Connexion réussie'
+        })
       }
     } catch (err) {
-      console.error('Error fetching RSVPs:', err);
-      setError('Erreur de connexion');
+      setResult({
+        success: false,
+        message: 'Exception',
+        error: err.message
+      })
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  };
-
-  if (loading) {
-    return (
-      <div className="test-rsvp">
-        <div className="loading">Chargement des réponses...</div>
-      </div>
-    );
   }
 
-  if (error) {
-    return (
-      <div className="test-rsvp">
-        <div className="error-message">{error}</div>
-      </div>
-    );
-  }
+  const testInsert = async () => {
+    setLoading(true)
+    setResult(null)
 
-  const stats = {
-    total: rsvps.length,
-    mairie: rsvps.filter(r => r.mairie_attending).length,
-    corse: rsvps.filter(r => r.corse_attending).length,
-    brunch: rsvps.filter(r => r.brunch_attending).length,
-    totalGuests: {
-      mairie: rsvps.reduce((sum, r) => sum + (r.mairie_attending ? r.mairie_guests : 0), 0),
-      corse: rsvps.reduce((sum, r) => sum + (r.corse_attending ? r.corse_guests : 0), 0),
-      brunch: rsvps.reduce((sum, r) => sum + (r.brunch_attending ? r.brunch_guests : 0), 0)
+    try {
+      const testData = {
+        guest_name: 'Test ' + Date.now(),
+        email: 'test@test.com',
+        attending_mairie: true,
+        guests_mairie: 1,
+        attending_corse: false,
+        guests_corse: 0,
+        attending_brunch: false,
+        guests_brunch: 0,
+        plus_one_name: '',
+        dietary_restrictions: '',
+        message: 'Test message'
+      }
+
+      const { data, error } = await supabase
+        .from('rsvps')
+        .insert([testData])
+        .select()
+
+      if (error) {
+        setResult({
+          success: false,
+          message: 'Erreur d\'insertion',
+          error: error
+        })
+      } else {
+        setResult({
+          success: true,
+          message: 'Insertion réussie',
+          data: data
+        })
+      }
+    } catch (err) {
+      setResult({
+        success: false,
+        message: 'Exception',
+        error: err.message
+      })
+    } finally {
+      setLoading(false)
     }
-  };
+  }
 
   return (
-    <div className="test-rsvp">
-      <h2 className="page-title">Réponses RSVP</h2>
+    <div style={{ padding: '50px', fontFamily: 'monospace' }}>
+      <h1>Test Supabase Connection</h1>
 
-      <div className="stats-grid">
-        <div className="stat-card">
-          <div className="stat-number">{stats.total}</div>
-          <div className="stat-label">Réponses totales</div>
-        </div>
-        <div className="stat-card">
-          <div className="stat-number">{stats.mairie}</div>
-          <div className="stat-label">Mairie</div>
-          <div className="stat-guests">{stats.totalGuests.mairie} invités</div>
-        </div>
-        <div className="stat-card highlight">
-          <div className="stat-number">{stats.corse}</div>
-          <div className="stat-label">Corse</div>
-          <div className="stat-guests">{stats.totalGuests.corse} invités</div>
-        </div>
-        <div className="stat-card">
-          <div className="stat-number">{stats.brunch}</div>
-          <div className="stat-label">Brunch</div>
-          <div className="stat-guests">{stats.totalGuests.brunch} invités</div>
-        </div>
+      <div style={{ marginBottom: '20px' }}>
+        <p><strong>Supabase URL:</strong> {import.meta.env.VITE_SUPABASE_URL}</p>
+        <p><strong>Supabase Key présente:</strong> {import.meta.env.VITE_SUPABASE_ANON_KEY ? 'Oui' : 'Non'}</p>
       </div>
 
-      {rsvps.length === 0 ? (
-        <div className="no-rsvps">
-          <p>Aucune réponse pour le moment</p>
-        </div>
-      ) : (
-        <div className="rsvps-list">
-          {rsvps.map((rsvp) => (
-            <div key={rsvp.id} className="rsvp-card">
-              <div className="rsvp-header">
-                <h3>{rsvp.name}</h3>
-                <span className="rsvp-email">{rsvp.email}</span>
-              </div>
+      <div style={{ marginBottom: '20px' }}>
+        <button
+          onClick={testConnection}
+          disabled={loading}
+          style={{ marginRight: '10px', padding: '10px 20px' }}
+        >
+          Tester la connexion
+        </button>
 
-              <div className="rsvp-events">
-                {rsvp.mairie_attending && (
-                  <div className="event-badge">
-                    Mairie ({rsvp.mairie_guests} {rsvp.mairie_guests > 1 ? 'personnes' : 'personne'})
-                  </div>
-                )}
-                {rsvp.corse_attending && (
-                  <div className="event-badge highlight">
-                    Corse ({rsvp.corse_guests} {rsvp.corse_guests > 1 ? 'personnes' : 'personne'})
-                  </div>
-                )}
-                {rsvp.brunch_attending && (
-                  <div className="event-badge">
-                    Brunch ({rsvp.brunch_guests} {rsvp.brunch_guests > 1 ? 'personnes' : 'personne'})
-                  </div>
-                )}
-              </div>
+        <button
+          onClick={testInsert}
+          disabled={loading}
+          style={{ padding: '10px 20px' }}
+        >
+          Tester l'insertion
+        </button>
+      </div>
 
-              {rsvp.plus_one && (
-                <div className="rsvp-detail">
-                  <strong>Accompagné(e)</strong>
-                </div>
-              )}
+      {loading && <p>Chargement...</p>}
 
-              {rsvp.dietary_restrictions && (
-                <div className="rsvp-detail">
-                  <strong>Restrictions alimentaires :</strong> {rsvp.dietary_restrictions}
-                </div>
-              )}
-
-              {rsvp.message && (
-                <div className="rsvp-message">
-                  <strong>Message :</strong> {rsvp.message}
-                </div>
-              )}
-
-              <div className="rsvp-date">
-                Reçu le {new Date(rsvp.created_at).toLocaleDateString('fr-FR', {
-                  day: 'numeric',
-                  month: 'long',
-                  year: 'numeric',
-                  hour: '2-digit',
-                  minute: '2-digit'
-                })}
-              </div>
+      {result && (
+        <div style={{
+          padding: '20px',
+          backgroundColor: result.success ? '#d4edda' : '#f8d7da',
+          border: `1px solid ${result.success ? '#c3e6cb' : '#f5c6cb'}`,
+          borderRadius: '5px',
+          marginTop: '20px'
+        }}>
+          <h3>{result.message}</h3>
+          {result.error && (
+            <div>
+              <h4>Détails de l'erreur:</h4>
+              <pre style={{ whiteSpace: 'pre-wrap', wordWrap: 'break-word' }}>
+                {JSON.stringify(result.error, null, 2)}
+              </pre>
             </div>
-          ))}
+          )}
+          {result.data && (
+            <div>
+              <h4>Données:</h4>
+              <pre style={{ whiteSpace: 'pre-wrap', wordWrap: 'break-word' }}>
+                {JSON.stringify(result.data, null, 2)}
+              </pre>
+            </div>
+          )}
         </div>
       )}
     </div>
-  );
+  )
 }
-
-export default TestRsvp;
