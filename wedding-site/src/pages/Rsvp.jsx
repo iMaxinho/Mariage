@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { supabase } from '../lib/supabase'
+import { useState, useEffect } from 'react'
+import { supabase, hasValidConfig } from '../lib/supabase'
 import './Rsvp.css'
 
 export default function Rsvp() {
@@ -18,6 +18,14 @@ export default function Rsvp() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState(null)
+  const [configError, setConfigError] = useState(false)
+
+  useEffect(() => {
+    if (!hasValidConfig()) {
+      setConfigError(true)
+      console.error('❌ Supabase configuration is missing or invalid')
+    }
+  }, [])
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target
@@ -32,7 +40,46 @@ export default function Rsvp() {
     setIsSubmitting(true)
     setSubmitStatus(null)
 
+    if (!hasValidConfig()) {
+      setSubmitStatus({
+        type: 'error',
+        message: 'Configuration Supabase manquante. Veuillez contacter l\'administrateur.'
+      })
+      setIsSubmitting(false)
+      console.error('❌ Cannot submit: Supabase configuration is missing')
+      return
+    }
+
+    if (!formData.guest_name.trim()) {
+      setSubmitStatus({
+        type: 'error',
+        message: 'Veuillez entrer votre nom.'
+      })
+      setIsSubmitting(false)
+      return
+    }
+
+    if (!formData.email.trim()) {
+      setSubmitStatus({
+        type: 'error',
+        message: 'Veuillez entrer votre email.'
+      })
+      setIsSubmitting(false)
+      return
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(formData.email)) {
+      setSubmitStatus({
+        type: 'error',
+        message: 'Veuillez entrer un email valide.'
+      })
+      setIsSubmitting(false)
+      return
+    }
+
     try {
+      console.log('Submitting RSVP...')
       const { data, error } = await supabase.rpc('insert_rsvp', {
         p_guest_name: formData.guest_name,
         p_email: formData.email,
@@ -47,10 +94,21 @@ export default function Rsvp() {
         p_message: formData.message || null
       })
 
-      if (error) throw error
+      console.log('Response:', { data, error })
+
+      if (error) {
+        console.error('❌ Supabase Error:', error)
+        throw error
+      }
+
+      if (data && !data.success) {
+        console.error('❌ Function returned error:', data.error)
+        throw new Error(data.error)
+      }
 
       const attendingAny = formData.attending_mairie || formData.attending_corse || formData.attending_brunch
 
+      console.log('✅ RSVP submitted successfully')
       setSubmitStatus({
         type: 'success',
         message: attendingAny
@@ -71,11 +129,19 @@ export default function Rsvp() {
         message: ''
       })
     } catch (error) {
+      console.error('❌ Full error object:', error)
+      let errorMessage = 'Une erreur s\'est produite. Veuillez réessayer.'
+
+      if (error.message) {
+        errorMessage = error.message
+      } else if (error.error_description) {
+        errorMessage = error.error_description
+      }
+
       setSubmitStatus({
         type: 'error',
-        message: 'Une erreur s\'est produite. Veuillez réessayer.'
+        message: errorMessage
       })
-      console.error('Error:', error)
     } finally {
       setIsSubmitting(false)
     }
@@ -91,6 +157,12 @@ export default function Rsvp() {
       </section>
 
       <section className="rsvp-content">
+        {configError && (
+          <div className="submit-status error" style={{ marginBottom: '20px' }}>
+            Configuration manquante. Veuillez contacter l'administrateur du site.
+          </div>
+        )}
+
         <form onSubmit={handleSubmit} className="rsvp-form">
           <div className="form-section">
             <h2 className="section-title">Vos coordonnées</h2>
