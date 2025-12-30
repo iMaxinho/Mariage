@@ -91,28 +91,26 @@ export default function Rsvp() {
         guests_brunch: formData.guests_brunch
       })
 
-      const rsvpData = {
-        guest_name: formData.guest_name.trim(),
-        email: formData.email.trim(),
-        attending_mairie: formData.attending_mairie,
-        guests_mairie: formData.guests_mairie,
-        attending_corse: formData.attending_corse,
-        guests_corse: formData.guests_corse,
-        attending_brunch: formData.attending_brunch,
-        guests_brunch: formData.guests_brunch,
-        plus_one_name: formData.plus_one_name?.trim() || null,
-        dietary_restrictions: formData.dietary_restrictions?.trim() || null,
-        message: formData.message?.trim() || null
+      const rsvpParams = {
+        p_guest_name: formData.guest_name.trim(),
+        p_email: formData.email.trim(),
+        p_attending_mairie: formData.attending_mairie,
+        p_guests_mairie: formData.guests_mairie,
+        p_attending_corse: formData.attending_corse,
+        p_guests_corse: formData.guests_corse,
+        p_attending_brunch: formData.attending_brunch,
+        p_guests_brunch: formData.guests_brunch,
+        p_plus_one_name: formData.plus_one_name?.trim() || null,
+        p_dietary_restrictions: formData.dietary_restrictions?.trim() || null,
+        p_message: formData.message?.trim() || null
       }
 
-      console.log('📊 RSVP data to insert:', rsvpData)
+      console.log('📊 Calling insert_rsvp function with params:', rsvpParams)
 
       const { data, error } = await supabase
-        .from('rsvps')
-        .insert([rsvpData])
-        .select()
+        .rpc('insert_rsvp', rsvpParams)
 
-      console.log('📥 Response from Supabase:', { data, error })
+      console.log('📥 Response from Supabase RPC:', { data, error })
 
       if (error) {
         console.error('❌ Supabase Error Details:', {
@@ -124,8 +122,8 @@ export default function Rsvp() {
         throw error
       }
 
-      if (!data || data.length === 0) {
-        console.error('❌ No data returned after insert')
+      if (!data) {
+        console.error('❌ No data returned from RPC function')
         throw new Error('Aucune donnée retournée après l\'insertion')
       }
 
