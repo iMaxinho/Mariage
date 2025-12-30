@@ -247,7 +247,8 @@
   text-align: center;
   padding: 60px 40px;
   background: url('/design_sans_titre copy.png') center center;
-  background-size: cover;
+  background-size: auto 100%;
+  background-repeat: repeat-x;
   background-position: center;
   color: white;
   margin-top: 40px;
