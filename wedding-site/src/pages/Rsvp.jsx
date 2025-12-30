@@ -91,39 +91,42 @@ export default function Rsvp() {
         guests_brunch: formData.guests_brunch
       })
 
-      const rsvpParams = {
-        p_guest_name: formData.guest_name.trim(),
-        p_email: formData.email.trim(),
-        p_attending_mairie: formData.attending_mairie,
-        p_guests_mairie: formData.guests_mairie,
-        p_attending_corse: formData.attending_corse,
-        p_guests_corse: formData.guests_corse,
-        p_attending_brunch: formData.attending_brunch,
-        p_guests_brunch: formData.guests_brunch,
-        p_plus_one_name: formData.plus_one_name?.trim() || null,
-        p_dietary_restrictions: formData.dietary_restrictions?.trim() || null,
-        p_message: formData.message?.trim() || null
+      const insertPayload = {
+        guest_name: formData.guest_name.trim(),
+        email: formData.email.trim(),
+        attending_mairie: formData.attending_mairie,
+        guests_mairie: formData.guests_mairie,
+        attending_corse: formData.attending_corse,
+        guests_corse: formData.guests_corse,
+        attending_brunch: formData.attending_brunch,
+        guests_brunch: formData.guests_brunch,
+        plus_one_name: formData.plus_one_name?.trim() || null,
+        dietary_restrictions: formData.dietary_restrictions?.trim() || null,
+        message: formData.message?.trim() || null
       }
 
-      console.log('📊 Calling insert_rsvp function with params:', rsvpParams)
+      console.log('📊 Inserting into public.rsvps table:', insertPayload)
 
       const { data, error } = await supabase
-        .rpc('insert_rsvp', rsvpParams)
+        .from('rsvps')
+        .insert([insertPayload])
+        .select()
 
-      console.log('📥 Response from Supabase RPC:', { data, error })
+      console.log('📥 Response from Supabase insert:', { data, error })
 
       if (error) {
         console.error('❌ Supabase Error Details:', {
           message: error.message,
           details: error.details,
           hint: error.hint,
-          code: error.code
+          code: error.code,
+          fullError: error
         })
         throw error
       }
 
-      if (!data) {
-        console.error('❌ No data returned from RPC function')
+      if (!data || data.length === 0) {
+        console.error('❌ No data returned from insert')
         throw new Error('Aucune donnée retournée après l\'insertion')
       }
 
