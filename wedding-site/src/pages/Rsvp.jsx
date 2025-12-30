@@ -79,31 +79,54 @@ export default function Rsvp() {
     }
 
     try {
-      console.log('Submitting RSVP...')
-      const { data, error } = await supabase.rpc('insert_rsvp', {
-        p_guest_name: formData.guest_name,
-        p_email: formData.email,
-        p_attending_mairie: formData.attending_mairie,
-        p_guests_mairie: formData.guests_mairie,
-        p_attending_corse: formData.attending_corse,
-        p_guests_corse: formData.guests_corse,
-        p_attending_brunch: formData.attending_brunch,
-        p_guests_brunch: formData.guests_brunch,
-        p_plus_one_name: formData.plus_one_name || null,
-        p_dietary_restrictions: formData.dietary_restrictions || null,
-        p_message: formData.message || null
+      console.log('📤 Submitting RSVP...')
+      console.log('Form data:', {
+        guest_name: formData.guest_name,
+        email: formData.email,
+        attending_mairie: formData.attending_mairie,
+        guests_mairie: formData.guests_mairie,
+        attending_corse: formData.attending_corse,
+        guests_corse: formData.guests_corse,
+        attending_brunch: formData.attending_brunch,
+        guests_brunch: formData.guests_brunch
       })
 
-      console.log('Response:', { data, error })
+      const rsvpData = {
+        guest_name: formData.guest_name.trim(),
+        email: formData.email.trim(),
+        attending_mairie: formData.attending_mairie,
+        guests_mairie: formData.guests_mairie,
+        attending_corse: formData.attending_corse,
+        guests_corse: formData.guests_corse,
+        attending_brunch: formData.attending_brunch,
+        guests_brunch: formData.guests_brunch,
+        plus_one_name: formData.plus_one_name?.trim() || null,
+        dietary_restrictions: formData.dietary_restrictions?.trim() || null,
+        message: formData.message?.trim() || null
+      }
+
+      console.log('📊 RSVP data to insert:', rsvpData)
+
+      const { data, error } = await supabase
+        .from('rsvps')
+        .insert([rsvpData])
+        .select()
+
+      console.log('📥 Response from Supabase:', { data, error })
 
       if (error) {
-        console.error('❌ Supabase Error:', error)
+        console.error('❌ Supabase Error Details:', {
+          message: error.message,
+          details: error.details,
+          hint: error.hint,
+          code: error.code
+        })
         throw error
       }
 
-      if (data && !data.success) {
-        console.error('❌ Function returned error:', data.error)
-        throw new Error(data.error)
+      if (!data || data.length === 0) {
+        console.error('❌ No data returned after insert')
+        throw new Error('Aucune donnée retournée après l\'insertion')
       }
 
       const attendingAny = formData.attending_mairie || formData.attending_corse || formData.attending_brunch
@@ -130,14 +153,29 @@ export default function Rsvp() {
       })
     } catch (error) {
       console.error('❌ Full error object:', error)
+      console.error('❌ Error stack:', error.stack)
+
       let errorMessage = 'Une erreur s\'est produite. Veuillez réessayer.'
 
       if (error.message === 'Failed to fetch' || error.name === 'TypeError') {
-        errorMessage = '❌ Impossible de contacter le serveur. Veuillez vérifier que Supabase est configuré correctement. Consultez CONFIGURATION_REQUISE.md pour plus d\'informations.'
+        errorMessage = 'Impossible de contacter le serveur. Veuillez vérifier votre connexion internet et que Supabase est configuré correctement.'
+        console.error('❌ Network error - check Supabase configuration in .env file')
+        console.error('Required env vars: VITE_SUPABASE_URL, VITE_SUPABASE_ANON_KEY')
+      } else if (error.code === 'PGRST301') {
+        errorMessage = 'Erreur de configuration: la table rsvps n\'existe pas. Veuillez exécuter les migrations SQL.'
+        console.error('❌ Table does not exist - run migration script')
+      } else if (error.code === 'PGRST116') {
+        errorMessage = 'Erreur de permission: impossible d\'insérer les données. Veuillez vérifier les politiques RLS.'
+        console.error('❌ RLS policy prevents insert - check policies')
+      } else if (error.code === '23514') {
+        errorMessage = 'Le nombre d\'invités doit être entre 0 et 10 pour chaque événement.'
+        console.error('❌ Check constraint violation - guest count out of range')
       } else if (error.message) {
         errorMessage = error.message
+        console.error('❌ Error message:', error.message)
       } else if (error.error_description) {
         errorMessage = error.error_description
+        console.error('❌ Error description:', error.error_description)
       }
 
       setSubmitStatus({
