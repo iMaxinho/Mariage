@@ -1,12 +1,10 @@
 .navigation {
-  background: var(--color-white);
-  box-shadow: 0 1px 8px rgba(168, 197, 218, 0.12);
+  background: white;
+  box-shadow: 0 1px 8px rgba(112, 161, 190, 0.1);
   position: sticky;
   top: 0;
   z-index: 100;
-  border-bottom: 1px solid var(--color-beige);
-  border-bottom: 2px solid transparent;
-  border-image: linear-gradient(to right, transparent, var(--color-beige), transparent) 1;
+  border-bottom: 1px solid #e5eef5;
 }
 
 .nav-container {
@@ -26,7 +24,7 @@
 .logo-text {
   font-size: 1.5rem;
   font-weight: 300;
-  color: var(--color-text-dark);
+  color: #2c3e50;
   letter-spacing: 2px;
   font-family: 'Cormorant Garamond', serif;
 }
@@ -41,13 +39,12 @@
 
 .nav-link {
   text-decoration: none;
-  color: var(--color-text-light);
+  color: #5a7a90;
   font-size: 0.95rem;
   font-weight: 500;
   transition: all 0.3s ease;
   position: relative;
   letter-spacing: 0.5px;
-  font-family: 'Montserrat', sans-serif;
 }
 
 .nav-link::after {
@@ -57,12 +54,12 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(to right, var(--color-aqua), var(--color-coral));
+  background: #70a1be;
   transition: width 0.3s ease;
 }
 
 .nav-link:hover {
-  color: var(--color-aqua);
+  color: #70a1be;
 }
 
 .nav-link:hover::after {
