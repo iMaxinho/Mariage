@@ -1,96 +1,153 @@
-import { useState, useEffect } from 'react';
-import './Home.css';
+import { Link } from 'react-router-dom'
+import './Home.css'
 
-function Home() {
-  const [timeRemaining, setTimeRemaining] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0
-  });
-
-  useEffect(() => {
-    const weddingDate = new Date('2025-06-07T15:00:00');
-
-    const updateCountdown = () => {
-      const now = new Date();
-      const difference = weddingDate - now;
-
-      if (difference > 0) {
-        setTimeRemaining({
-          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-          minutes: Math.floor((difference / 1000 / 60) % 60),
-          seconds: Math.floor((difference / 1000) % 60)
-        });
-      }
-    };
-
-    updateCountdown();
-    const interval = setInterval(updateCountdown, 1000);
-
-    return () => clearInterval(interval);
-  }, []);
-
+export default function Home() {
   return (
     <div className="home">
-      <div className="hero-section">
+      <section className="hero">
         <div className="hero-content">
-          <h2 className="welcome-text">Bienvenue sur notre site de mariage</h2>
-          <p className="intro-text">
-            Nous sommes ravis de partager avec vous les détails de notre grand jour !
-          </p>
+          <div className="hero-logo">
+            <img src="/logo-AM.png" alt="Logo Allison & Maxime" className="shell-logo" />
+          </div>
+          <h1 className="hero-title">
+            Allison & Maxime
+          </h1>
+          <p className="hero-subtitle">Nous nous marions</p>
+          <div className="hero-dates">
+            <p className="date-line">28 Mai 2026 · Neuilly-sur-Seine</p>
+            <p className="date-line">6 & 7 Juin 2026 · Corse</p>
+          </div>
+        </div>
+      </section>
 
-          <div className="countdown">
-            <h3>Compte à rebours</h3>
-            <div className="countdown-grid">
-              <div className="countdown-item">
-                <span className="countdown-number">{timeRemaining.days}</span>
-                <span className="countdown-label">Jours</span>
+      <section className="save-the-date">
+        <div className="container">
+          <h2 className="section-title">Réservez ces dates</h2>
+          <p className="section-intro">
+            Nous avons le bonheur de vous inviter à célébrer notre union lors de trois moments exceptionnels
+          </p>
+        </div>
+      </section>
+
+      <section className="events-timeline">
+        <div className="container">
+          <div className="event-card featured">
+            <div className="event-number">
+              <img src="/logo (8).png" alt="" className="shell-number" />
+              <span className="number-text">1</span>
+            </div>
+            <div className="event-content">
+              <h3 className="event-title">Mairie de Neuilly-sur-Seine</h3>
+              <p className="event-date">28 Mai 2026</p>
+              <p className="event-description">
+                Cérémonie civile à la mairie de Neuilly-sur-Seine suivie d'un cocktail
+              </p>
+              <div className="event-details">
+                <div className="detail-item">
+                  <span className="detail-label">Heure</span>
+                  <span className="detail-value">15h00</span>
+                </div>
+                <div className="detail-item">
+                  <span className="detail-label">Lieu</span>
+                  <span className="detail-value">
+                    <a
+                      href="https://www.google.com/maps/place/96+Avenue+Achille+Peretti,+92200+Neuilly-sur-Seine"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ color: 'inherit', textDecoration: 'underline' }}
+                    >
+                      Mairie de Neuilly-sur-Seine
+                    </a>
+                  </span>
+                </div>
               </div>
-              <div className="countdown-item">
-                <span className="countdown-number">{timeRemaining.hours}</span>
-                <span className="countdown-label">Heures</span>
+            </div>
+          </div>
+
+          <div className="event-card featured">
+            <div className="event-number">
+              <img src="/logo (8).png" alt="" className="shell-number" />
+              <span className="number-text">2</span>
+            </div>
+            <div className="event-content">
+              <h3 className="event-title">Cérémonie en Corse</h3>
+              <p className="event-date">Samedi 6 Juin 2026</p>
+              <p className="event-description">
+                Cérémonie laïque sur une plage de Corse du Sud, suivie d'une soirée inoubliable
+              </p>
+              <div className="event-details">
+                <div className="detail-item">
+                  <span className="detail-label">Heure</span>
+                  <span className="detail-value">17h30</span>
+                </div>
+                <div className="detail-item">
+                  <span className="detail-label">Lieu</span>
+                  <span className="detail-value">
+                    <a
+                      href="https://www.google.com/maps/search/Da+Mare+By+Sea+Lounge+Palombaggia+Porto+Vecchio/@41.5891,9.3558,15z"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ color: 'inherit', textDecoration: 'underline' }}
+                    >
+                      Plage Da Mare, Palombaggia
+                    </a>
+                  </span>
+                </div>
               </div>
-              <div className="countdown-item">
-                <span className="countdown-number">{timeRemaining.minutes}</span>
-                <span className="countdown-label">Minutes</span>
-              </div>
-              <div className="countdown-item">
-                <span className="countdown-number">{timeRemaining.seconds}</span>
-                <span className="countdown-label">Secondes</span>
+            </div>
+          </div>
+
+          <div className="event-card">
+            <div className="event-number">
+              <img src="/logo (8).png" alt="" className="shell-number" />
+              <span className="number-text">3</span>
+            </div>
+            <div className="event-content">
+              <h3 className="event-title">Brunch du lendemain</h3>
+              <p className="event-date">Dimanche 7 Juin 2026</p>
+              <p className="event-description">
+                Brunch convivial pour prolonger les festivités en bord de mer
+              </p>
+              <div className="event-details">
+                <div className="detail-item">
+                  <span className="detail-label">Heure</span>
+                  <span className="detail-value">12h30</span>
+                </div>
+                <div className="detail-item">
+                  <span className="detail-label">Lieu</span>
+                  <span className="detail-value">
+                    <a
+                      href="https://maps.app.goo.gl/TgvSLz7VwqLrx72h8"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ color: 'inherit', textDecoration: 'underline' }}
+                    >
+                      Plage La Bohème, Bonifacio
+                    </a>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div className="info-cards">
-        <div className="info-card">
-          <h3>Mairie</h3>
-          <p className="card-date">28 Mai 2025</p>
-          <p className="card-details">Cérémonie civile à Paris</p>
+      <section className="cta-section">
+        <div className="container">
+          <h2 className="cta-title">Confirmez votre présence</h2>
+          <p className="cta-text">
+            Merci de nous faire savoir si vous pourrez nous rejoindre pour célébrer ce jour spécial
+          </p>
+          <div className="cta-buttons">
+            <Link to="/rsvp" className="btn btn-primary">
+              Répondre à l'invitation
+            </Link>
+            <Link to="/infos" className="btn btn-secondary">
+              Infos pratiques
+            </Link>
+          </div>
         </div>
-        <div className="info-card highlight">
-          <h3>Célébration en Corse</h3>
-          <p className="card-date">6-7 Juin 2025</p>
-          <p className="card-details">Weekend de fête à Ajaccio</p>
-        </div>
-        <div className="info-card">
-          <h3>Brunch</h3>
-          <p className="card-date">8 Juin 2025</p>
-          <p className="card-details">Pour prolonger les festivités</p>
-        </div>
-      </div>
-
-      <div className="invitation-section">
-        <p className="invitation-text">
-          Votre présence à nos côtés serait le plus beau des cadeaux.<br />
-          N'oubliez pas de confirmer votre participation via le formulaire RSVP !
-        </p>
-      </div>
+      </section>
     </div>
-  );
+  )
 }
-
-export default Home;

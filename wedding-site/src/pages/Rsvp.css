@@ -29,6 +29,70 @@
   line-height: 1.6;
 }
 
+.impatience-banner {
+  max-width: 1200px;
+  margin: 0 auto 60px;
+  width: 100%;
+  background: white;
+  border: 2px solid #e5eef5;
+  box-shadow: 0 2px 20px rgba(112, 161, 190, 0.08);
+  padding: 30px 40px;
+}
+
+.impatience-banner-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.impatience-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.impatience-header .the-text {
+  height: 48px;
+  width: auto;
+}
+
+.impatience-title {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  font-weight: 300;
+  letter-spacing: 2px;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.impatience-messages-horizontal {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: center;
+}
+
+.impatience-messages-horizontal p {
+  font-size: 1.1rem;
+  color: #5a7a90;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0 10px;
+}
+
+.love-signature-banner {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.love-logo-banner {
+  height: 80px;
+  width: auto;
+  opacity: 0.9;
+}
+
 .rsvp-content {
   max-width: 1100px;
   margin: 0 auto;
@@ -324,6 +388,32 @@
     font-size: 1rem;
   }
 
+  .impatience-banner {
+    padding: 24px 20px;
+    margin-bottom: 40px;
+  }
+
+  .impatience-header .the-text {
+    height: 18px;
+  }
+
+  .impatience-title {
+    font-size: 1.5rem;
+  }
+
+  .impatience-messages-horizontal {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .impatience-messages-horizontal p {
+    font-size: 0.9rem;
+  }
+
+  .love-logo-banner {
+    height: 35px;
+  }
+
   .rsvp-form {
     padding: 30px 20px;
     gap: 30px;
@@ -369,6 +459,27 @@
 
   .rsvp-header p {
     font-size: 0.95rem;
+  }
+
+  .impatience-banner {
+    padding: 20px 16px;
+    margin-bottom: 30px;
+  }
+
+  .impatience-header .the-text {
+    height: 16px;
+  }
+
+  .impatience-title {
+    font-size: 1.3rem;
+  }
+
+  .impatience-messages-horizontal p {
+    font-size: 0.85rem;
+  }
+
+  .love-logo-banner {
+    height: 30px;
   }
 
   .rsvp-form {

@@ -122,20 +122,21 @@ const SERVICES = [
 
 const ACTIVITIES = {
   portoVecchio: {
-    title: 'Les Incontournables de Porto-Vecchio',
+    title: 'Incontournables',
+    secondLine: 'de Porto-Vecchio',
     sections: [
       {
         title: 'Visiter la vieille ville de Porto-Vecchio',
-        link: 'https://maps.app.goo.gl/fzzKiJxPVL3KW71x7',
+        link: 'https://www.google.com/maps/search/?api=1&query=Place+de+la+République+Porto-Vecchio',
         linkText: 'Localisation : place de la République'
       },
       {
         title: 'Les plus belles plages de Porto-Vecchio',
         items: [
-          { name: 'Plage de Santa Giulia', link: 'https://maps.app.goo.gl/eVqDkbTjTaBf5g3n7', linkText: 'parking' },
-          { name: 'Plage de Palombaggia', link: 'https://maps.app.goo.gl/YC7qbGrw6GN6jt7Q9', linkText: 'parking' },
-          { name: 'Plage de Rondinara', link: 'https://maps.app.goo.gl/aZMKRPEi7ELn99Vz8', linkText: 'parking' },
-          { name: 'Plage de Fautea', link: 'https://maps.app.goo.gl/NW6E7h4g43o1eXz79', linkText: 'parking' }
+          { name: 'Plage de Santa Giulia', link: 'https://www.google.com/maps/search/?api=1&query=Parking+Plage+Santa+Giulia+Porto-Vecchio', linkText: 'parking' },
+          { name: 'Plage de Palombaggia', link: 'https://www.google.com/maps/search/?api=1&query=Parking+Plage+Palombaggia+Porto-Vecchio', linkText: 'parking' },
+          { name: 'Plage de Rondinara', link: 'https://www.google.com/maps/search/?api=1&query=Parking+Plage+Rondinara+Corse', linkText: 'parking' },
+          { name: 'Plage de Fautea', link: 'https://www.google.com/maps/search/?api=1&query=Parking+Plage+Fautea+Porto-Vecchio', linkText: 'parking' }
         ]
       },
       {
@@ -144,7 +145,7 @@ const ACTIVITIES = {
           {
             name: 'Randonnée de la Piscia di Gallu',
             details: [
-              { label: 'Point de départ de la randonnée', link: 'https://maps.app.goo.gl/sT8P8uqnqNbPNs768', linkText: 'parking Piscia di Gallu' },
+              { label: 'Point de départ de la randonnée', link: 'https://www.google.com/maps/search/?api=1&query=Parking+Piscia+di+Gallu+Corse', linkText: 'parking Piscia di Gallu' },
               { label: 'Niveau de difficulté', value: 'modéré' },
               { label: 'Nombre de kilomètres', value: '4,8km' },
               { label: 'Durée de la randonnée', value: '2 à 3 h' }
@@ -153,7 +154,7 @@ const ACTIVITIES = {
           {
             name: 'Belle boucle dans la baie de Saint Cyprien',
             details: [
-              { label: 'Point de départ de la randonnée', link: 'https://maps.app.goo.gl/K5g5vPCeVs2HmwUD7', linkText: 'Piazza Di a Marina' },
+              { label: 'Point de départ de la randonnée', link: 'https://www.google.com/maps/search/?api=1&query=Piazza+Di+a+Marina+Saint+Cyprien+Porto-Vecchio', linkText: 'Piazza Di a Marina' },
               { label: 'Niveau de difficulté', value: 'facile' },
               { label: 'Nombre de kilomètres', value: '6,2 km' },
               { label: 'Durée de la randonnée', value: '2h' }
@@ -164,81 +165,76 @@ const ACTIVITIES = {
     ]
   },
   bonifacio: {
-    title: 'Les Incontournables de Bonifacio',
+    title: 'Incontournables',
+    secondLine: 'de Bonifacio',
     sections: [
       {
         title: 'La citadelle de Bonifacio',
-        link: 'https://maps.app.goo.gl/9vqrj7JQYK8QKHYK6',
+        link: 'https://www.google.com/maps/search/?api=1&query=Citadelle+de+Bonifacio',
         linkText: 'Localisation : citadelle de Bonifacio'
       },
       {
         title: 'La chapelle Saint-Roch',
-        link: 'https://maps.app.goo.gl/p3EXGxgWz7S1x3x19',
+        link: 'https://www.google.com/maps/search/?api=1&query=Chapelle+Saint-Roch+Bonifacio',
         linkText: 'Localisation : chapelle Saint-Roch',
         description: 'Depuis le port, vous trouverez un escalier pour vous rendre à la chapelle Saint-Roch ! Ça grimpe ! Mais ça vaut clairement le coup, on vous l\'assure ! La vue depuis la chapelle Saint-Roch est absolument incroyable'
       },
       {
         title: 'Le sentier du Littoral de Bonifacio',
-        link: 'https://maps.app.goo.gl/7V37SDKU8MsjkD5r6',
+        link: 'https://www.google.com/maps/search/?api=1&query=Sentier+Campu+Rumanilu+Bonifacio',
         linkText: 'Localisation : sentier du Campu Rumanilu et Pertusato',
         description: 'Pour les amateurs de marche, le sentier du Campu Rumanilu ou le chemin de Pertusato vous permettront de longer les falaises et d\'admirer des panoramas spectaculaires.'
       },
       {
         title: 'Les plus belles plages autour de Bonifacio',
         items: [
-          { name: 'La plage de Saint-Antoine', link: 'https://maps.app.goo.gl/vRSX7RJp8Z8ZJhJ29', linkText: 'parking' },
-          { name: 'Plage de Paragan et Fazzio', link: 'https://maps.app.goo.gl/6h2gf1GD2MQ3W6hM6', linkText: 'parking' },
-          { name: 'Plages du Petit et du Grand Spérone et baie de Piantarella', link: 'https://maps.app.goo.gl/aKB1pNVkeDjR93TH6', linkText: 'parking' }
+          { name: 'La plage de Saint-Antoine', link: 'https://www.google.com/maps/search/?api=1&query=Parking+Plage+Saint-Antoine+Bonifacio', linkText: 'parking' },
+          { name: 'Plage de Paragan et Fazzio', link: 'https://www.google.com/maps/search/?api=1&query=Parking+Plage+Paragan+Fazzio+Bonifacio', linkText: 'parking' },
+          { name: 'Plages du Petit et du Grand Spérone et baie de Piantarella', link: 'https://www.google.com/maps/search/?api=1&query=Parking+Plage+Sperone+Piantarella+Bonifacio', linkText: 'parking' }
         ]
       }
     ]
   },
   restaurants: {
-    title: 'The Restaurants',
+    title: 'Restaurants',
     subtitle: 'Porto Vecchio',
     sections: [
       {
-        title: 'Restaurant de plages :',
+        title: 'Restaurant de plages',
         subtitle: 'Plages de Saint Cyprien',
+        boldSubtitle: true,
         items: [
-          { name: 'Le cabanon Bleu', link: 'https://maps.app.goo.gl/DVjXqNvj7kU6sn8S8' },
-          { name: 'Le tiki', link: 'https://maps.app.goo.gl/AQNUm6Bf47JCLQKX6' }
+          { name: 'Le cabanon Bleu', link: 'https://www.google.com/maps/search/?api=1&query=Le+cabanon+Bleu+Saint+Cyprien+Porto-Vecchio' },
+          { name: 'Le tiki', link: 'https://www.google.com/maps/search/?api=1&query=Le+tiki+Saint+Cyprien+Porto-Vecchio' }
         ]
       },
       {
         subtitle: 'Plages de Palombaggia',
+        boldSubtitle: true,
         items: [
-          { name: 'Playa Baggia', link: 'https://maps.app.goo.gl/LfH6cqxXAD5xvWry5' },
-          { name: 'Le Palm Beach', link: 'https://maps.app.goo.gl/cRWcGDCvXnZh9PJ38' }
+          { name: 'Playa Baggia', link: 'https://www.google.com/maps/search/?api=1&query=Playa+Baggia+Palombaggia' },
+          { name: 'Le Palm Beach', link: 'https://www.google.com/maps/search/?api=1&query=Le+Palm+Beach+Palombaggia' }
         ]
       },
       {
         subtitle: 'Sur la baie de Santa Giulia',
+        boldSubtitle: true,
         items: [
-          { name: 'Le Bar Plage', link: 'https://maps.app.goo.gl/vLx4jQXefh4XhB3BA' }
+          { name: 'Le Bar Plage', link: 'https://www.google.com/maps/search/?api=1&query=Le+Bar+Plage+Santa+Giulia+Porto-Vecchio' }
         ]
       },
       {
         title: 'Restaurants traditionels',
         items: [
-          { name: 'Restaurant Bar de la guitare', link: 'https://maps.app.goo.gl/XPWHuFzKHm1JfBzaA' },
-          { name: 'Restaurant U cantonu', link: 'https://maps.app.goo.gl/vRYaYhtdCMhEW6dc8' },
-          { name: 'L\'Alivi', link: 'https://maps.app.goo.gl/8yXG5KsVMCbVzMSV7' },
-          { name: 'Costa Marina', link: 'https://maps.app.goo.gl/bkzuoP7i4zc8z2dn9' },
-          { name: 'Terramea', link: 'https://maps.app.goo.gl/7RqRSZKW2mSBCqpP8' },
-          { name: 'L\'Ondella', link: 'https://maps.app.goo.gl/4C7v7ZPSR8XJkrns8' },
-          { name: 'Le Figuier', link: 'https://maps.app.goo.gl/DXqCFWCTAKLVjKxR9' }
+          { name: 'Restaurant Bar de la guitare', link: 'https://www.google.com/maps/search/?api=1&query=Restaurant+Bar+de+la+guitare+Porto-Vecchio' },
+          { name: 'Restaurant U cantonu', link: 'https://www.google.com/maps/search/?api=1&query=Restaurant+U+cantonu+Porto-Vecchio' },
+          { name: 'L\'Alivi', link: 'https://www.google.com/maps/search/?api=1&query=L\'Alivi+Porto-Vecchio' },
+          { name: 'Costa Marina', link: 'https://www.google.com/maps/search/?api=1&query=Costa+Marina+Restaurant+Porto-Vecchio' },
+          { name: 'Terramea', link: 'https://www.google.com/maps/search/?api=1&query=Terramea+Restaurant+Porto-Vecchio' },
+          { name: 'L\'Ondella', link: 'https://www.google.com/maps/search/?api=1&query=L\'Ondella+Restaurant+Porto-Vecchio' },
+          { name: 'Le Figuier', link: 'https://www.google.com/maps/search/?api=1&query=Le+Figuier+Restaurant+Porto-Vecchio' }
         ]
       }
-    ]
-  },
-  impatience: {
-    title: 'The Impatience',
-    messages: [
-      'N\'hésitez pas à nous indiquer où vous séjournez.',
-      'Les enfants, c\'est la vie : ils sont évidemment les bienvenus !',
-      'Nous avons hâte de partager ce moment avec vous.',
-      'Nous vous transmettrons très bientôt les numéros utiles.'
     ]
   }
 }
@@ -422,7 +418,11 @@ export default function Infos() {
                   <div className="framed-card-content">
                     <h2 className="framed-title">
                       <img src="/the-logo-activities.png" alt="Porto-Vecchio" className="the-text" />
+                      <span className="title-main">{ACTIVITIES.portoVecchio.title}</span>
                     </h2>
+                    {ACTIVITIES.portoVecchio.secondLine && (
+                      <div className="title-second-line">{ACTIVITIES.portoVecchio.secondLine}</div>
+                    )}
 
                     {ACTIVITIES.portoVecchio.sections.map((section, idx) => (
                       <div key={idx} className="framed-section">
@@ -439,11 +439,15 @@ export default function Infos() {
                           <div className="items-list">
                             {section.items.map((item, itemIdx) => (
                               <div key={itemIdx} className="item-entry">
-                                {item.name && <div className="item-name">{item.name}</div>}
-                                {item.link && (
-                                  <a href={item.link} target="_blank" rel="noopener noreferrer" className="item-link">
-                                    {item.linkText}
-                                  </a>
+                                {item.name && (
+                                  <div className="item-name-with-link">
+                                    <span className="item-name">{item.name}</span>
+                                    {item.link && (
+                                      <a href={item.link} target="_blank" rel="noopener noreferrer" className="item-link">
+                                        {item.linkText}
+                                      </a>
+                                    )}
+                                  </div>
                                 )}
                                 {item.details && (
                                   <div className="item-details">
@@ -474,7 +478,11 @@ export default function Infos() {
                   <div className="framed-card-content">
                     <h2 className="framed-title">
                       <img src="/the-logo-activities.png" alt="Bonifacio" className="the-text" />
+                      <span className="title-main">{ACTIVITIES.bonifacio.title}</span>
                     </h2>
+                    {ACTIVITIES.bonifacio.secondLine && (
+                      <div className="title-second-line">{ACTIVITIES.bonifacio.secondLine}</div>
+                    )}
 
                     {ACTIVITIES.bonifacio.sections.map((section, idx) => (
                       <div key={idx} className="framed-section">
@@ -491,12 +499,14 @@ export default function Infos() {
                           <div className="items-list">
                             {section.items.map((item, itemIdx) => (
                               <div key={itemIdx} className="item-entry">
-                                <div className="item-name">{item.name}</div>
-                                {item.link && (
-                                  <a href={item.link} target="_blank" rel="noopener noreferrer" className="item-link">
-                                    {item.linkText}
-                                  </a>
-                                )}
+                                <div className="item-name-with-link">
+                                  <span className="item-name">{item.name}</span>
+                                  {item.link && (
+                                    <a href={item.link} target="_blank" rel="noopener noreferrer" className="item-link">
+                                      {item.linkText}
+                                    </a>
+                                  )}
+                                </div>
                               </div>
                             ))}
                           </div>
@@ -510,13 +520,16 @@ export default function Infos() {
                   <div className="framed-card-content">
                     <h2 className="framed-title">
                       <img src="/the-logo-activities.png" alt="Restaurants" className="the-text" />
+                      <span className="title-main">{ACTIVITIES.restaurants.title}</span>
                     </h2>
-                    <h3 className="framed-subtitle">{ACTIVITIES.restaurants.subtitle}</h3>
+                    {ACTIVITIES.restaurants.subtitle && (
+                      <div className="title-second-line">{ACTIVITIES.restaurants.subtitle}</div>
+                    )}
 
                     {ACTIVITIES.restaurants.sections.map((section, idx) => (
                       <div key={idx} className="framed-section">
                         {section.title && <h3 className="section-title-framed">{section.title}</h3>}
-                        {section.subtitle && <h4 className="section-subtitle-framed">{section.subtitle}</h4>}
+                        {section.subtitle && <h4 className={`section-subtitle-framed ${section.boldSubtitle ? 'bold-subtitle' : ''}`}>{section.subtitle}</h4>}
                         {section.items && (
                           <div className="items-list">
                             {section.items.map((item, itemIdx) => (
@@ -537,21 +550,6 @@ export default function Infos() {
                   </div>
                 </div>
 
-                <div className="framed-card impatience-card">
-                  <div className="framed-card-content">
-                    <h2 className="framed-title">
-                      <img src="/the-logo-activities.png" alt="Impatience" className="the-text" />
-                    </h2>
-
-                    <div className="impatience-messages">
-                      {ACTIVITIES.impatience.messages.map((message, idx) => (
-                        <p key={idx} className="impatience-message">{message}</p>
-                      ))}
-                    </div>
-
-                    <div className="love-signature">Love</div>
-                  </div>
-                </div>
               </div>
             </div>
           )}

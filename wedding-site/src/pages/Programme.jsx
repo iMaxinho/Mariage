@@ -1,125 +1,156 @@
-import './Programme.css';
+import './Programme.css'
 
-function Programme() {
+export default function Programme() {
   return (
     <div className="programme">
-      <h2 className="page-title">Programme des Festivités</h2>
-      <p className="page-intro">
-        Nous avons préparé trois événements mémorables pour célébrer notre union
-      </p>
+      <div className="programme-header">
+        <h1 className="page-title">Le Programme</h1>
+        <p className="page-subtitle">Trois moments pour célébrer notre union</p>
+      </div>
 
-      <div className="events">
-        <div className="event-card">
-          <div className="event-header">
-            <h3 className="event-title">Mairie</h3>
-            <span className="event-date">Mercredi 28 Mai 2025</span>
-          </div>
-          <div className="event-content">
-            <div className="event-detail">
-              <strong>Lieu :</strong> Mairie du 15ème arrondissement, Paris
-            </div>
-            <div className="event-detail">
-              <strong>Adresse :</strong> 31 Rue Péclet, 75015 Paris
-            </div>
-            <div className="event-timeline">
-              <div className="timeline-item">
-                <span className="time">14h30</span>
-                <span className="description">Accueil des invités</span>
+      <div className="programme-container">
+        <div className="timeline">
+          <div className="timeline-item">
+            <div className="timeline-marker">
+              <div className="timeline-dot">
+                <img src="/logo (8).png" alt="" className="shell-number" />
+                <span className="number-text">1</span>
               </div>
-              <div className="timeline-item">
-                <span className="time">15h00</span>
-                <span className="description">Cérémonie civile</span>
-              </div>
-              <div className="timeline-item">
-                <span className="time">16h00</span>
-                <span className="description">Vin d'honneur</span>
-              </div>
+              <div className="timeline-line"></div>
             </div>
-          </div>
-        </div>
-
-        <div className="event-card featured">
-          <div className="event-header">
-            <h3 className="event-title">Célébration en Corse</h3>
-            <span className="event-date">Vendredi 6 - Samedi 7 Juin 2025</span>
-          </div>
-          <div className="event-content">
-            <div className="event-detail">
-              <strong>Lieu :</strong> Domaine de Murtoli, Corse-du-Sud
-            </div>
-            <div className="event-detail">
-              <strong>Accès :</strong> Transferts organisés depuis Ajaccio
-            </div>
-
-            <div className="day-section">
-              <h4>Vendredi 6 Juin</h4>
-              <div className="event-timeline">
-                <div className="timeline-item">
-                  <span className="time">17h00</span>
-                  <span className="description">Arrivée et installation</span>
+            <div className="timeline-content">
+              <div className="date-badge">28 Mai 2026</div>
+              <h2 className="event-title">Mairie de Neuilly-sur-Seine</h2>
+              <div className="event-details">
+                <div className="detail-row">
+                  <span className="icon">🕓</span>
+                  <span>15h00 - Cérémonie civile</span>
                 </div>
-                <div className="timeline-item">
-                  <span className="time">19h30</span>
-                  <span className="description">Cocktail de bienvenue</span>
+                <div className="detail-row">
+                  <span className="icon">📍</span>
+                  <span>
+                    <a
+                      href="https://www.google.com/maps/place/96+Avenue+Achille+Peretti,+92200+Neuilly-sur-Seine"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ color: 'inherit', textDecoration: 'underline' }}
+                    >
+                      Mairie de Neuilly-sur-Seine, 96 avenue Achille Peretti, 92200
+                    </a>
+                  </span>
                 </div>
-                <div className="timeline-item">
-                  <span className="time">20h30</span>
-                  <span className="description">Dîner convivial</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="day-section">
-              <h4>Samedi 7 Juin</h4>
-              <div className="event-timeline">
-                <div className="timeline-item">
-                  <span className="time">15h00</span>
-                  <span className="description">Cérémonie laïque</span>
-                </div>
-                <div className="timeline-item">
-                  <span className="time">16h30</span>
-                  <span className="description">Cocktail et photos</span>
-                </div>
-                <div className="timeline-item">
-                  <span className="time">20h00</span>
-                  <span className="description">Dîner de gala</span>
-                </div>
-                <div className="timeline-item">
-                  <span className="time">22h30</span>
-                  <span className="description">Soirée dansante</span>
+                <p className="description">
+                  Nous nous dirons oui à la mairie de Neuilly-Sur-Seine.
+                  La Mairie sera suivie d'un cocktail convivial.
+                  Cette première journée marquera le début de nos célébrations.
+                </p>
+                <div className="info-box">
+                  <h4>Informations pratiques</h4>
+                  <ul>
+                    <li>Accès en métro: Ligne 1, station Les Sablons</li>
+                    <li>Parking disponible à proximité</li>
+                    <li>Cocktail de 16h30 à 19h00</li>
+                  </ul>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div className="event-card">
-          <div className="event-header">
-            <h3 className="event-title">Brunch du Lendemain</h3>
-            <span className="event-date">Dimanche 8 Juin 2025</span>
+          <div className="timeline-item highlight">
+            <div className="timeline-marker">
+              <div className="timeline-dot">
+                <img src="/logo (8).png" alt="" className="shell-number" />
+                <span className="number-text">2</span>
+              </div>
+              <div className="timeline-line"></div>
+            </div>
+            <div className="timeline-content">
+              <div className="date-badge highlight">Samedi 6 Juin 2026</div>
+              <h2 className="event-title">Cérémonie en Corse</h2>
+              <div className="event-details">
+                <div className="detail-row">
+                  <span className="icon">🕕</span>
+                  <span>17h30 - Cérémonie laïque</span>
+                </div>
+                <div className="detail-row">
+                  <span className="icon">📍</span>
+                  <span>
+                    <a
+                      href="https://www.google.com/maps/search/Da+Mare+By+Sea+Lounge+Palombaggia+Porto+Vecchio/@41.5891,9.3558,15z"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ color: 'inherit', textDecoration: 'underline' }}
+                    >
+                      Plage Da Mare, Palombaggia, Corse du Sud
+                    </a>
+                  </span>
+                </div>
+                <p className="description">
+                  La cérémonie aura lieu sur la magnifique plage de Palombaggia et sera suivie d'un dîner et d'une soirée les pieds dans le sable.
+                </p>
+                <div className="info-box">
+                  <h4>À prévoir</h4>
+                  <ul>
+                    <li>Tenue élégante et légère (pensez au sable!)</li>
+                    <li>Chaussures plates conseillées pour la plage</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="event-content">
-            <div className="event-detail">
-              <strong>Lieu :</strong> Domaine de Murtoli
-            </div>
-            <div className="event-timeline">
-              <div className="timeline-item">
-                <span className="time">11h00</span>
-                <span className="description">Brunch décontracté</span>
-              </div>
-              <div className="timeline-item">
-                <span className="time">14h00</span>
-                <span className="description">Au revoir et bon retour</span>
+
+          <div className="timeline-item">
+            <div className="timeline-marker">
+              <div className="timeline-dot">
+                <img src="/logo (8).png" alt="" className="shell-number" />
+                <span className="number-text">3</span>
               </div>
             </div>
-            <p className="event-note">
-              Un moment convivial pour se remémorer les meilleurs moments du weekend !
-            </p>
+            <div className="timeline-content">
+              <div className="date-badge">Dimanche 7 Juin 2026</div>
+              <h2 className="event-title">Brunch du lendemain</h2>
+              <div className="event-details">
+                <div className="detail-row">
+                  <span className="icon">🕚</span>
+                  <span>12h30 - Brunch convivial</span>
+                </div>
+                <div className="detail-row">
+                  <span className="icon">📍</span>
+                  <span>
+                    <a
+                      href="https://maps.app.goo.gl/TgvSLz7VwqLrx72h8"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ color: 'inherit', textDecoration: 'underline' }}
+                    >
+                      Plage La Bohème, Bonifacio
+                    </a>
+                  </span>
+                </div>
+                <p className="description">
+                  Prolongeons la fête avec un brunch décontracté en bord de mer.
+                  Moment parfait pour se retrouver et profiter des derniers instants en Corse.
+                </p>
+                <div className="info-box">
+                  <h4>Informations</h4>
+                  <ul>
+                    <li>Dress code white party même le maillot</li>
+                    <li>Ambiance chill en bord de mer</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  );
-}
 
-export default Programme;
+      <div className="final-note">
+        <h3>Une question sur le programme?</h3>
+        <p>
+          N'hésitez pas à nous contacter si vous avez besoin de plus d'informations
+          sur l'un de ces événements.
+        </p>
+      </div>
+    </div>
+  )
+}

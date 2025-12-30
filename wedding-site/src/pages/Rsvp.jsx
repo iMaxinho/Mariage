@@ -80,6 +80,24 @@ export default function Rsvp() {
         <p>Merci de nous indiquer à quels événements vous pourrez vous joindre à nous</p>
       </section>
 
+      <div className="impatience-banner">
+        <div className="impatience-banner-content">
+          <div className="impatience-header">
+            <img src="/the-logo-activities.png" alt="Impatience" className="the-text" />
+            <span className="impatience-title">Impatience</span>
+          </div>
+          <div className="impatience-messages-horizontal">
+            <p>N'hésitez pas à nous indiquer où vous séjournez.</p>
+            <p>Les enfants, c'est la vie : ils sont évidemment les bienvenus !</p>
+            <p>Nous avons hâte de partager ce moment avec vous.</p>
+            <p>Nous vous transmettrons très bientôt les numéros utiles.</p>
+          </div>
+          <div className="love-signature-banner">
+            <img src="/logo.png" alt="Love" className="love-logo-banner" />
+          </div>
+        </div>
+      </div>
+
       <section className="rsvp-content">
         <form onSubmit={handleSubmit} className="rsvp-form">
           <div className="form-section">
