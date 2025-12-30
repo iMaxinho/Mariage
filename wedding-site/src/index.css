@@ -91,7 +91,34 @@ button:focus-visible {
   box-sizing: border-box;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 ::selection {
   background-color: var(--color-sky-blue);
   color: var(--color-white);
+}
+
+.decorative-separator {
+  height: 3px;
+  background: url('/logo-7.png') center repeat-x;
+  background-size: auto 3px;
+  margin: 40px auto;
+  max-width: 300px;
+  opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5em;
+  }
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2em;
+  }
 }
