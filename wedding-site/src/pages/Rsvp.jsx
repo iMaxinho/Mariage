@@ -35,25 +35,21 @@ export default function Rsvp() {
     try {
       console.log('Submitting RSVP with data:', formData)
 
-      const apiUrl = `/api/submit-rsvp`
+      const { data, error } = await supabase
+        .from('rsvps')
+        .insert([formData])
+        .select()
+        .single()
 
-      const response = await fetch(apiUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData)
-      })
+      console.log('Response data:', data)
+      console.log('Response error:', error)
 
-      const result = await response.json()
-      console.log('Response:', result)
-
-      if (!response.ok || result.error) {
-        console.error('API error:', result.error)
-        throw new Error(result.error || 'Erreur lors de la soumission')
+      if (error) {
+        console.error('Database error:', error)
+        throw new Error(error.message || 'Erreur lors de la soumission')
       }
 
-      console.log('Submission successful:', result.data)
+      console.log('Submission successful:', data)
 
       const attendingAny = formData.attending_mairie || formData.attending_corse || formData.attending_brunch
 
