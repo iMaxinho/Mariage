@@ -1,158 +1,77 @@
 .cadeaux {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-
-.gift-content {
+  min-height: calc(100vh - 70px);
+  background: linear-gradient(135deg, #fefdfb 0%, #f9f7f4 100%);
   display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.gift-section {
-  background: white;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
-  transition: transform 0.3s ease;
-}
-
-.gift-section:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-}
-
-.gift-section.main-message {
-  background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.05));
-  border: 2px solid rgba(212, 175, 55, 0.3);
-  text-align: center;
-}
-
-.main-text {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.3rem;
-  color: #5a4a42;
-  line-height: 1.8;
-  margin: 0;
-  font-style: italic;
-}
-
-.gift-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.8rem;
-  color: #5a4a42;
-  margin: 0 0 1rem 0;
-}
-
-.gift-description {
-  font-family: 'Cormorant Garamond', serif;
-  color: #5a4a42;
-}
-
-.gift-description p {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  margin: 0 0 1.5rem 0;
-}
-
-.gift-button {
-  font-family: 'Cormorant Garamond', serif;
-  background: linear-gradient(135deg, #d4af37 0%, #f0d98d 100%);
-  color: white;
-  border: none;
-  padding: 1rem 2rem;
-  font-size: 1.1rem;
-  border-radius: 50px;
-  cursor: not-allowed;
-  transition: all 0.3s ease;
-  display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  position: relative;
-  opacity: 0.6;
+  justify-content: center;
+  padding: 60px 20px;
+  width: 100%;
+  overflow-x: hidden;
 }
 
-.gift-button:not(:disabled) {
-  cursor: pointer;
-  opacity: 1;
+.cadeaux-container {
+  max-width: 600px;
+  width: 100%;
 }
 
-.gift-button:not(:disabled):hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
-}
-
-.coming-soon {
-  font-size: 0.85rem;
-  opacity: 0.9;
-}
-
-.gift-section.alternative {
-  background: linear-gradient(135deg, rgba(90, 74, 66, 0.05), transparent);
-}
-
-.gift-section.note {
-  background: rgba(212, 175, 55, 0.08);
-  border-left: 4px solid #d4af37;
-}
-
-.gift-note {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.1rem;
-  color: #5a4a42;
-  line-height: 1.7;
-  margin: 0;
-}
-
-.gift-section.contact {
+.page-title {
+  font-size: 48px;
   text-align: center;
-  background: linear-gradient(135deg, #f5f5f5, #e8e8e8);
+  color: #333;
+  margin: 0 0 60px 0;
+  font-weight: 700;
 }
 
-.gift-section.contact p {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.1rem;
-  color: #5a4a42;
-  margin: 0.5rem 0;
+.placeholder-card {
+  background: white;
+  padding: 60px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
 }
 
-.gift-section.contact a {
-  color: #d4af37;
-  text-decoration: none;
-  font-weight: 600;
-  transition: opacity 0.3s ease;
+.placeholder-icon {
+  font-size: 64px;
+  margin-bottom: 24px;
+  display: block;
 }
 
-.gift-section.contact a:hover {
-  opacity: 0.8;
-  text-decoration: underline;
+.placeholder-card h2 {
+  font-size: 28px;
+  color: #333;
+  margin: 0 0 16px 0;
+  font-weight: 700;
+}
+
+.placeholder-card p {
+  font-size: 16px;
+  color: #666;
+  margin: 12px 0;
+  line-height: 1.6;
+}
+
+.subtitle {
+  color: #8b9d83;
+  font-size: 15px;
+  margin-top: 20px;
+  font-weight: 500;
 }
 
 @media (max-width: 768px) {
-  .cadeaux {
-    padding: 1rem;
+  .page-title {
+    font-size: 36px;
+    margin-bottom: 40px;
   }
 
-  .gift-section {
-    padding: 1.5rem;
+  .placeholder-card {
+    padding: 40px 24px;
   }
 
-  .main-text {
-    font-size: 1.1rem;
+  .placeholder-icon {
+    font-size: 48px;
   }
 
-  .gift-title {
-    font-size: 1.5rem;
-  }
-
-  .gift-description p,
-  .gift-note {
-    font-size: 1rem;
-  }
-
-  .gift-button {
-    font-size: 1rem;
-    padding: 0.8rem 1.5rem;
+  .placeholder-card h2 {
+    font-size: 24px;
   }
 }

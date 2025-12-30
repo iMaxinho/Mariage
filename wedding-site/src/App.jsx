@@ -5,6 +5,7 @@ import Programme from './pages/Programme'
 import Infos from './pages/Infos'
 import Cadeaux from './pages/Cadeaux'
 import Rsvp from './pages/Rsvp'
+import TestRsvp from './pages/TestRsvp'
 import './App.css'
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="/infos" element={<Infos />} />
           <Route path="/cadeaux" element={<Cadeaux />} />
           <Route path="/rsvp" element={<Rsvp />} />
+          <Route path="/test-rsvp" element={<TestRsvp />} />
         </Routes>
       </main>
     </BrowserRouter>

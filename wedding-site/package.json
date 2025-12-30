@@ -4,13 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "start": "vite",
+    "dev": "concurrently \"npm run api\" \"npx vite\"",
     "api": "node server.js",
-    "dev:fullstack": "concurrently \"npm run api\" \"vite\"",
-    "build": "vite build",
+    "build": "npx vite build",
     "lint": "eslint .",
-    "preview": "vite preview --host 0.0.0.0 --port 4173"
+    "preview": "npx vite preview"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.85.0",

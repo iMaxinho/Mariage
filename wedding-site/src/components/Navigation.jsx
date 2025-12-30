@@ -1,46 +1,43 @@
-import { useState } from 'react';
-import './Navigation.css';
+import { Link } from 'react-router-dom'
+import { useState } from 'react'
+import './Navigation.css'
 
-function Navigation({ currentPage, onNavigate }) {
-  const [isOpen, setIsOpen] = useState(false);
+export default function Navigation() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  const menuItems = [
-    { id: 'home', label: 'Accueil' },
-    { id: 'programme', label: 'Programme' },
-    { id: 'infos', label: 'Infos Pratiques' },
-    { id: 'cadeaux', label: 'Liste de Mariage' },
-    { id: 'rsvp', label: 'RSVP' }
-  ];
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen)
+  }
 
-  const handleClick = (pageId) => {
-    onNavigate(pageId);
-    setIsOpen(false);
-  };
+  const closeMenu = () => {
+    setIsMenuOpen(false)
+  }
 
   return (
     <nav className="navigation">
-      <button
-        className="menu-toggle"
-        onClick={() => setIsOpen(!isOpen)}
-        aria-label="Toggle menu"
-      >
-        ☰
-      </button>
+      <div className="nav-container">
+        <Link to="/" className="nav-logo" onClick={closeMenu}>
+          <span className="logo-text">Allison & Maxime</span>
+        </Link>
 
-      <ul className={`nav-list ${isOpen ? 'open' : ''}`}>
-        {menuItems.map((item) => (
-          <li key={item.id}>
-            <button
-              className={`nav-link ${currentPage === item.id ? 'active' : ''}`}
-              onClick={() => handleClick(item.id)}
-            >
-              {item.label}
-            </button>
-          </li>
-        ))}
-      </ul>
+        <button
+          className={`hamburger ${isMenuOpen ? 'active' : ''}`}
+          onClick={toggleMenu}
+          aria-label="Menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
+          <li><Link to="/" className="nav-link" onClick={closeMenu}>Accueil</Link></li>
+          <li><Link to="/programme" className="nav-link" onClick={closeMenu}>Programme</Link></li>
+          <li><Link to="/infos" className="nav-link" onClick={closeMenu}>Infos Pratiques</Link></li>
+          <li><Link to="/cadeaux" className="nav-link" onClick={closeMenu}>Cadeaux</Link></li>
+          <li><Link to="/rsvp" className="nav-link" onClick={closeMenu}>RSVP</Link></li>
+        </ul>
+      </div>
     </nav>
-  );
+  )
 }
-
-export default Navigation;

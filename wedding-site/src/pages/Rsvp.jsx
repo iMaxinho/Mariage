@@ -33,11 +33,46 @@ export default function Rsvp() {
     setSubmitStatus(null)
 
     try {
-      const { error } = await supabase
-        .from('rsvps')
-        .insert([formData])
+      console.log('Submitting RSVP with data:', formData)
 
-      if (error) throw error
+      const emailBody = `
+Nouvelle RSVP de mariage
+
+Nom: ${formData.guest_name}
+Email: ${formData.email}
+${formData.plus_one_name ? `Accompagnant(e): ${formData.plus_one_name}` : ''}
+
+Événements:
+- Mairie: ${formData.attending_mairie ? `Oui (${formData.guests_mairie} personne(s))` : 'Non'}
+- Corse: ${formData.attending_corse ? `Oui (${formData.guests_corse} personne(s))` : 'Non'}
+- Brunch: ${formData.attending_brunch ? `Oui (${formData.guests_brunch} personne(s))` : 'Non'}
+
+${formData.dietary_restrictions ? `Restrictions alimentaires: ${formData.dietary_restrictions}` : ''}
+${formData.message ? `Message: ${formData.message}` : ''}
+      `.trim()
+
+      const response = await fetch('https://formsubmit.co/ajax/corsica@allisonmaxime2026.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.guest_name,
+          email: formData.email,
+          message: emailBody
+        })
+      })
+
+      const result = await response.json()
+      console.log('Response:', result)
+
+      if (!response.ok && result.success !== 'true') {
+        console.error('Email error:', result)
+        throw new Error('Erreur lors de l\'envoi')
+      }
+
+      console.log('Email sent successfully')
 
       const attendingAny = formData.attending_mairie || formData.attending_corse || formData.attending_brunch
 
