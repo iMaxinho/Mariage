@@ -10,7 +10,7 @@
 [0] API server running on http://localhost:3001
 [0] Health check: http://localhost:3001/api/health
 [1] 
-[1]   VITE v7.2.6  ready in 253 ms
+[1]   VITE v7.2.6  ready in 271 ms
 [1] 
 [1]   ➜  Local:   http://localhost:4173/
 [1]   ➜  Network: http://169.254.8.1:4173/
