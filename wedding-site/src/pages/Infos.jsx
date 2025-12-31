@@ -412,7 +412,8 @@ export default function Infos() {
                 <div className="framed-card">
                   <div className="framed-card-content">
                     <h2 className="framed-title">
-                      THE INCONTOURNABLES<br/>
+                      <img src="/the_logo.png" alt="the" className="the-logo-img" />
+                      INCONTOURNABLES<br/>
                       {ACTIVITIES.portoVecchio.title.toUpperCase()}
                     </h2>
 
@@ -472,7 +473,8 @@ export default function Infos() {
                 <div className="framed-card">
                   <div className="framed-card-content">
                     <h2 className="framed-title">
-                      THE INCONTOURNABLES<br/>
+                      <img src="/the_logo.png" alt="the" className="the-logo-img" />
+                      INCONTOURNABLES<br/>
                       {ACTIVITIES.bonifacio.title.toUpperCase()}
                     </h2>
 
