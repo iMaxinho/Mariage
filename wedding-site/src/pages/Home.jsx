@@ -6,6 +6,9 @@ export default function Home() {
     <div className="home">
       <section className="hero">
         <div className="hero-content">
+          <div className="hero-logo">
+            <img src="/logo-AM.png" alt="Logo Allison & Maxime" className="shell-logo" />
+          </div>
           <h1 className="hero-title">
             Allison & Maxime
           </h1>
@@ -30,6 +33,7 @@ export default function Home() {
         <div className="container">
           <div className="event-card featured">
             <div className="event-number">
+              <img src="/logo (8).png" alt="" className="shell-number" />
               <span className="number-text">1</span>
             </div>
             <div className="event-content">
@@ -62,6 +66,7 @@ export default function Home() {
 
           <div className="event-card featured">
             <div className="event-number">
+              <img src="/logo (8).png" alt="" className="shell-number" />
               <span className="number-text">2</span>
             </div>
             <div className="event-content">
@@ -94,6 +99,7 @@ export default function Home() {
 
           <div className="event-card">
             <div className="event-number">
+              <img src="/logo (8).png" alt="" className="shell-number" />
               <span className="number-text">3</span>
             </div>
             <div className="event-content">
