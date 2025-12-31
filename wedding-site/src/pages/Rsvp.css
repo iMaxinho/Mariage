@@ -78,11 +78,11 @@
 }
 
 .love-signature-rsvp {
-  font-family: 'Great Vibes', cursive;
-  font-size: 3rem;
-  color: #9b8a6f;
-  text-align: center;
-  margin-top: 30px;
+  width: 150px;
+  height: auto;
+  display: block;
+  margin: 30px auto 0 auto;
+  object-fit: contain;
 }
 
 .rsvp-content {
@@ -389,7 +389,7 @@
   }
 
   .love-signature-rsvp {
-    font-size: 2.5rem;
+    width: 120px;
   }
 
   .rsvp-header h1 {
@@ -459,7 +459,7 @@
   }
 
   .love-signature-rsvp {
-    font-size: 2rem;
+    width: 100px;
   }
 
   .rsvp-header h1 {

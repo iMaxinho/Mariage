@@ -215,7 +215,7 @@ export default function Rsvp() {
             <p>Nous avons hâte de partager ce moment avec vous.</p>
             <p>Nous vous transmettrons très bientôt les numéros utiles.</p>
           </div>
-          <div className="love-signature-rsvp">Love</div>
+          <img src="/logo_copie.png" alt="Love" className="love-signature-rsvp" />
         </div>
       </div>
 
