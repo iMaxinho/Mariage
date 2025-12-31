@@ -228,7 +228,10 @@
 .cta-section {
   padding: 100px 20px;
   min-height: 400px;
-  background: linear-gradient(135deg, var(--color-aqua) 0%, var(--color-sky-blue) 50%, var(--color-beige) 100%);
+  background: url('/design_sans_titre copy copy.png') center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   text-align: center;
   color: var(--color-white);
   position: relative;
