@@ -29,6 +29,62 @@
   line-height: 1.6;
 }
 
+.impatience-section {
+  max-width: 700px;
+  margin: 0 auto 60px auto;
+}
+
+.impatience-card-rsvp {
+  position: relative;
+  background: white;
+  padding: 60px 50px;
+  border: 12px solid transparent;
+  border-image: url('/logo-7.png') 80 stretch;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.impatience-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #2c3e50;
+  text-align: center;
+  margin: 0 0 30px 0;
+  letter-spacing: 3px;
+  line-height: 1.3;
+}
+
+.the-text-impatience {
+  display: block;
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: #70a1be;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.impatience-messages {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.impatience-messages p {
+  font-size: 1rem;
+  color: #2c3e50;
+  line-height: 1.8;
+  margin: 16px 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.love-signature-rsvp {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3rem;
+  color: #9b8a6f;
+  text-align: center;
+  margin-top: 30px;
+}
+
 .rsvp-content {
   max-width: 1100px;
   margin: 0 auto;
@@ -315,6 +371,27 @@
     padding: 60px 16px;
   }
 
+  .impatience-card-rsvp {
+    padding: 40px 30px;
+  }
+
+  .impatience-title {
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+  }
+
+  .the-text-impatience {
+    font-size: 1.8rem;
+  }
+
+  .impatience-messages p {
+    font-size: 0.95rem;
+  }
+
+  .love-signature-rsvp {
+    font-size: 2.5rem;
+  }
+
   .rsvp-header h1 {
     font-size: 2.2rem;
     margin-bottom: 12px;
@@ -361,6 +438,28 @@
 @media (max-width: 600px) {
   .rsvp {
     padding: 40px 16px;
+  }
+
+  .impatience-card-rsvp {
+    padding: 30px 20px;
+    border-width: 8px;
+  }
+
+  .impatience-title {
+    font-size: 1.2rem;
+    letter-spacing: 1.5px;
+  }
+
+  .the-text-impatience {
+    font-size: 1.5rem;
+  }
+
+  .impatience-messages p {
+    font-size: 0.9rem;
+  }
+
+  .love-signature-rsvp {
+    font-size: 2rem;
   }
 
   .rsvp-header h1 {

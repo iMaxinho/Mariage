@@ -203,6 +203,22 @@ export default function Rsvp() {
         <p>Merci de nous indiquer à quels événements vous pourrez vous joindre à nous</p>
       </section>
 
+      <div className="impatience-section">
+        <div className="impatience-card-rsvp">
+          <h2 className="impatience-title">
+            <span className="the-text-impatience">the</span>
+            IMPATIENCE
+          </h2>
+          <div className="impatience-messages">
+            <p>N'hésitez pas à nous indiquer où vous séjournez.</p>
+            <p>Les enfants, c'est la vie : ils sont évidemment les bienvenus !</p>
+            <p>Nous avons hâte de partager ce moment avec vous.</p>
+            <p>Nous vous transmettrons très bientôt les numéros utiles.</p>
+          </div>
+          <div className="love-signature-rsvp">Love</div>
+        </div>
+      </div>
+
       <section className="rsvp-content">
         {configError && (
           <div className="submit-status error" style={{ marginBottom: '20px' }}>

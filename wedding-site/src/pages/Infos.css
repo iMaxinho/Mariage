@@ -422,7 +422,7 @@
 }
 
 .framed-section {
-  margin-bottom: 32px;
+  margin-bottom: 40px;
 }
 
 .section-title-framed {
@@ -475,6 +475,7 @@
 
 .item-entry {
   text-align: center;
+  margin-bottom: 8px;
 }
 
 .item-name {
