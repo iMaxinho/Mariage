@@ -1,8 +1,0 @@
-<svg width="80" height="80" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <pattern id="shellPattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M20 5 Q15 10 12 15 Q15 20 20 25 Q25 20 28 15 Q25 10 20 5" fill="#70A1BE" opacity="0.3"/>
-    </pattern>
-  </defs>
-  <rect width="80" height="80" fill="url(#shellPattern)"/>
-</svg>

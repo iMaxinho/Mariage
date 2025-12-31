@@ -13,7 +13,7 @@ export default function Programme() {
           <div className="timeline-item">
             <div className="timeline-marker">
               <div className="timeline-dot">
-                <img src="/logo (8).svg" alt="" className="shell-number" />
+                <img src="/logo (8).png" alt="" className="shell-number" />
                 <span className="number-text">1</span>
               </div>
               <div className="timeline-line"></div>
@@ -59,7 +59,7 @@ export default function Programme() {
           <div className="timeline-item highlight">
             <div className="timeline-marker">
               <div className="timeline-dot">
-                <img src="/logo (8).svg" alt="" className="shell-number" />
+                <img src="/logo (8).png" alt="" className="shell-number" />
                 <span className="number-text">2</span>
               </div>
               <div className="timeline-line"></div>
@@ -102,7 +102,7 @@ export default function Programme() {
           <div className="timeline-item">
             <div className="timeline-marker">
               <div className="timeline-dot">
-                <img src="/logo (8).svg" alt="" className="shell-number" />
+                <img src="/logo (8).png" alt="" className="shell-number" />
                 <span className="number-text">3</span>
               </div>
             </div>
