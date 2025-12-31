@@ -496,7 +496,7 @@
 }
 
 .item-link {
-  display: inline-block;
+  display: inline;
   color: #70a1be;
   text-decoration: underline;
   font-size: 0.9rem;

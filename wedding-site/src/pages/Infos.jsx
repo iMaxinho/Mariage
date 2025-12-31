@@ -431,11 +431,18 @@ export default function Infos() {
                           <div className="items-list">
                             {section.items.map((item, itemIdx) => (
                               <div key={itemIdx} className="item-entry">
-                                {item.name && <div className="item-name">{item.name}</div>}
-                                {item.link && (
-                                  <a href={item.link} target="_blank" rel="noopener noreferrer" className="item-link">
-                                    {item.linkText}
-                                  </a>
+                                {item.name && (
+                                  <div className="item-name">
+                                    {item.name}
+                                    {item.link && (
+                                      <>
+                                        {' - '}
+                                        <a href={item.link} target="_blank" rel="noopener noreferrer" className="item-link">
+                                          {item.linkText}
+                                        </a>
+                                      </>
+                                    )}
+                                  </div>
                                 )}
                                 {item.details && (
                                   <div className="item-details">
@@ -484,12 +491,17 @@ export default function Infos() {
                           <div className="items-list">
                             {section.items.map((item, itemIdx) => (
                               <div key={itemIdx} className="item-entry">
-                                <div className="item-name">{item.name}</div>
-                                {item.link && (
-                                  <a href={item.link} target="_blank" rel="noopener noreferrer" className="item-link">
-                                    {item.linkText}
-                                  </a>
-                                )}
+                                <div className="item-name">
+                                  {item.name}
+                                  {item.link && (
+                                    <>
+                                      {' - '}
+                                      <a href={item.link} target="_blank" rel="noopener noreferrer" className="item-link">
+                                        {item.linkText}
+                                      </a>
+                                    </>
+                                  )}
+                                </div>
                               </div>
                             ))}
                           </div>
