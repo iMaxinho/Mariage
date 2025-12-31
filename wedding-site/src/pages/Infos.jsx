@@ -517,7 +517,7 @@ export default function Infos() {
                   <div className="framed-card-content">
                     <h2 className="framed-title">
                       <img src="/the_logo.png" alt="the" className="the-logo-img" />
-                      {ACTIVITIES.restaurants.title.toUpperCase().replace('THE ', '')}
+                      Restaurants
                     </h2>
                     <h3 className="framed-subtitle">{ACTIVITIES.restaurants.subtitle}</h3>
 
