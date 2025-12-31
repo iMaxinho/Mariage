@@ -552,7 +552,8 @@
 }
 
 .restaurants-card-centered .section-subtitle-framed {
-  font-weight: 700;
+  font-weight: 900;
+  color: #2c5f7f;
 }
 
 .restaurant-link {
