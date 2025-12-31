@@ -104,10 +104,11 @@ img {
 
 .decorative-separator {
   height: 3px;
-  background: linear-gradient(90deg, transparent, var(--color-aqua), transparent);
+  background: url('/logo-7.png') center repeat-x;
+  background-size: auto 3px;
   margin: 40px auto;
   max-width: 300px;
-  opacity: 0.3;
+  opacity: 0.5;
 }
 
 @media (max-width: 768px) {

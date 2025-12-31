@@ -86,10 +86,11 @@
 }
 
 .timeline-line {
-  width: 2px;
+  width: 8px;
   flex: 1;
-  background: linear-gradient(to bottom, #70a1be, transparent);
-  opacity: 0.3;
+  background: url('/logo-7.png') center repeat-y;
+  background-size: 8px auto;
+  opacity: 0.6;
 }
 
 .timeline-item:nth-child(2) .timeline-line,
@@ -247,7 +248,11 @@
   text-align: center;
   padding: 100px 20px;
   min-height: 400px;
-  background: linear-gradient(135deg, #70a1be 0%, #a8c5da 100%);
+  background: url('/design_sans_titre copy.png') center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: white;
   position: relative;
 }
 
@@ -258,7 +263,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(112, 161, 190, 0.3);
   z-index: 0;
 }
 
