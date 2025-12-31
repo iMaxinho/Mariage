@@ -412,8 +412,10 @@ export default function Infos() {
                 <div className="framed-card">
                   <div className="framed-card-content">
                     <h2 className="framed-title">
-                      <img src="/the_logo.png" alt="the" className="the-logo-img" />
-                      Incontournables<br/>
+                      <div className="framed-title-row">
+                        <img src="/the_logo.png" alt="the" className="the-logo-img" />
+                        Incontournables
+                      </div>
                       {ACTIVITIES.portoVecchio.title}
                     </h2>
 
@@ -473,8 +475,10 @@ export default function Infos() {
                 <div className="framed-card">
                   <div className="framed-card-content">
                     <h2 className="framed-title">
-                      <img src="/the_logo.png" alt="the" className="the-logo-img" />
-                      Incontournables<br/>
+                      <div className="framed-title-row">
+                        <img src="/the_logo.png" alt="the" className="the-logo-img" />
+                        Incontournables
+                      </div>
                       {ACTIVITIES.bonifacio.title}
                     </h2>
 
@@ -516,8 +520,10 @@ export default function Infos() {
                 <div className="framed-card restaurants-card-centered">
                   <div className="framed-card-content">
                     <h2 className="framed-title">
-                      <img src="/the_logo.png" alt="the" className="the-logo-img" />
-                      Restaurants
+                      <div className="framed-title-row">
+                        <img src="/the_logo.png" alt="the" className="the-logo-img" />
+                        Restaurants
+                      </div>
                     </h2>
                     <h3 className="framed-subtitle">{ACTIVITIES.restaurants.subtitle}</h3>
 
