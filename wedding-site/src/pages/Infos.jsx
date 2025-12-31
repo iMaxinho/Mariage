@@ -122,7 +122,7 @@ const SERVICES = [
 
 const ACTIVITIES = {
   portoVecchio: {
-    title: 'Les Incontournables de Porto-Vecchio',
+    title: 'de Porto-Vecchio',
     sections: [
       {
         title: 'Visiter la vieille ville de Porto-Vecchio',
@@ -164,7 +164,7 @@ const ACTIVITIES = {
     ]
   },
   bonifacio: {
-    title: 'Les Incontournables de Bonifacio',
+    title: 'de Bonifacio',
     sections: [
       {
         title: 'La citadelle de Bonifacio',
@@ -412,7 +412,7 @@ export default function Infos() {
                 <div className="framed-card">
                   <div className="framed-card-content">
                     <h2 className="framed-title">
-                      <img src="/the_logo.png" alt="the" className="the-logo-img" />
+                      THE INCONTOURNABLES<br/>
                       {ACTIVITIES.portoVecchio.title.toUpperCase()}
                     </h2>
 
@@ -472,7 +472,7 @@ export default function Infos() {
                 <div className="framed-card">
                   <div className="framed-card-content">
                     <h2 className="framed-title">
-                      <img src="/the_logo.png" alt="the" className="the-logo-img" />
+                      THE INCONTOURNABLES<br/>
                       {ACTIVITIES.bonifacio.title.toUpperCase()}
                     </h2>
 
