@@ -331,7 +331,7 @@ export default function Infos() {
                         <span className="discount-badge">{hotel.discount}</span>
                       )}
                     </div>
-                    <p className="distance"><img src="/car-icon.svg" alt="car" className="car-icon" /> {hotel.distance}</p>
+                    <p className="distance"><img src="/ifa-f9-6952180_640 copy.webp" alt="car" className="car-icon" /> {hotel.distance}</p>
                     <div className="rating">
                       {'⭐'.repeat(Math.floor(hotel.rating))}
                       <span className="rating-value">{hotel.rating}</span>
@@ -361,7 +361,7 @@ export default function Infos() {
                   <div key={residence.id} className="accommodation-card">
                     <h3>{residence.name}</h3>
                     <p className="description">{residence.description}</p>
-                    <p className="distance"><img src="/car-icon.svg" alt="car" className="car-icon" /> {residence.distance}</p>
+                    <p className="distance"><img src="/ifa-f9-6952180_640 copy.webp" alt="car" className="car-icon" /> {residence.distance}</p>
                     <div className="rating">
                       {'⭐'.repeat(Math.floor(residence.rating))}
                       <span className="rating-value">{residence.rating}</span>
