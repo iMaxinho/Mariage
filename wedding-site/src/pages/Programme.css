@@ -88,7 +88,7 @@
 .timeline-line {
   width: 8px;
   flex: 1;
-  background: url('/logo-7.svg') center repeat-y;
+  background: url('/logo-7.png') center repeat-y;
   background-size: 8px auto;
   opacity: 0.6;
 }
@@ -248,7 +248,7 @@
   text-align: center;
   padding: 100px 20px;
   min-height: 400px;
-  background: linear-gradient(135deg, #a8c5da 0%, #7ba9c7 50%, #c9b59a 100%);
+  background: url('/design_sans_titre copy.png') center center;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
