@@ -374,6 +374,7 @@
   gap: 40px;
   max-width: 1400px;
   margin: 0 auto;
+  justify-items: center;
 }
 
 .framed-card {
@@ -384,6 +385,8 @@
   border-image: url('/logo-7.png') 80 stretch;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   min-height: 600px;
+  width: 100%;
+  max-width: 600px;
 }
 
 .framed-card-content {
@@ -537,6 +540,7 @@
 
 .restaurant-entry {
   margin: 8px 0;
+  line-height: 1.3;
 }
 
 .restaurant-link {
@@ -546,6 +550,7 @@
   font-size: 1rem;
   transition: color 0.3s ease;
   font-family: 'Montserrat', sans-serif;
+  line-height: 1.3;
 }
 
 .restaurant-link:hover {
