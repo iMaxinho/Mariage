@@ -511,7 +511,7 @@ export default function Infos() {
                   </div>
                 </div>
 
-                <div className="framed-card">
+                <div className="framed-card restaurants-card-centered">
                   <div className="framed-card-content">
                     <h2 className="framed-title">
                       <img src="/the_logo.png" alt="the" className="the-logo-img" />
@@ -521,7 +521,7 @@ export default function Infos() {
 
                     {ACTIVITIES.restaurants.sections.map((section, idx) => (
                       <div key={idx} className="framed-section">
-                        {section.title && <h3 className="section-title-framed">{section.title}</h3>}
+                        {section.title && <h3 className="section-title-framed section-title-bold">{section.title}</h3>}
                         {section.subtitle && <h4 className="section-subtitle-framed">{section.subtitle}</h4>}
                         {section.items && (
                           <div className="items-list">
