@@ -412,7 +412,7 @@ export default function Infos() {
                 <div className="framed-card">
                   <div className="framed-card-content">
                     <h2 className="framed-title">
-                      <img src="/the-text.png" alt="the" className="the-logo-img" />
+                      <img src="/the_logo.png" alt="the" className="the-logo-img" />
                       {ACTIVITIES.portoVecchio.title.toUpperCase()}
                     </h2>
 
@@ -465,7 +465,7 @@ export default function Infos() {
                 <div className="framed-card">
                   <div className="framed-card-content">
                     <h2 className="framed-title">
-                      <img src="/the-text.png" alt="the" className="the-logo-img" />
+                      <img src="/the_logo.png" alt="the" className="the-logo-img" />
                       {ACTIVITIES.bonifacio.title.toUpperCase()}
                     </h2>
 
@@ -502,7 +502,7 @@ export default function Infos() {
                 <div className="framed-card">
                   <div className="framed-card-content">
                     <h2 className="framed-title">
-                      <img src="/the-text.png" alt="the" className="the-logo-img" />
+                      <img src="/the_logo.png" alt="the" className="the-logo-img" />
                       {ACTIVITIES.restaurants.title.toUpperCase().replace('THE ', '')}
                     </h2>
                     <h3 className="framed-subtitle">{ACTIVITIES.restaurants.subtitle}</h3>
