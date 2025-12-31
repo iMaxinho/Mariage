@@ -206,7 +206,7 @@ export default function Rsvp() {
       <div className="impatience-section">
         <div className="impatience-card-rsvp">
           <h2 className="impatience-title">
-            <span className="the-text-impatience">the</span>
+            <img src="/the-text.png" alt="the" className="the-logo-img-impatience" />
             IMPATIENCE
           </h2>
           <div className="impatience-messages">

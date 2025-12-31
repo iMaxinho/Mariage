@@ -412,6 +412,13 @@
   letter-spacing: 1px;
 }
 
+.the-logo-img {
+  display: block;
+  height: 2.2rem;
+  width: auto;
+  margin: 0 auto 8px auto;
+}
+
 .framed-subtitle {
   font-size: 1.5rem;
   font-weight: 600;
@@ -639,6 +646,10 @@
     font-size: 1.8rem;
   }
 
+  .the-logo-img {
+    height: 1.8rem;
+  }
+
   .framed-subtitle {
     font-size: 1.2rem;
   }
@@ -692,6 +703,10 @@
 
   .the-text {
     font-size: 1.5rem;
+  }
+
+  .the-logo-img {
+    height: 1.5rem;
   }
 
   .framed-subtitle {
