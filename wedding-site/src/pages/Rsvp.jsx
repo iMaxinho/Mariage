@@ -14,8 +14,7 @@ export default function Rsvp() {
     guests_brunch: 1,
     plus_one_name: '',
     dietary_restrictions: '',
-    message: '',
-    website: ''
+    message: ''
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState(null)
@@ -74,16 +73,6 @@ export default function Rsvp() {
       setSubmitStatus({
         type: 'error',
         message: 'Veuillez entrer un email valide.'
-      })
-      setIsSubmitting(false)
-      return
-    }
-
-    if (formData.website) {
-      console.log('🤖 Bot detected - honeypot field filled')
-      setSubmitStatus({
-        type: 'success',
-        message: 'Merci pour votre confirmation! Nous avons hâte de célébrer avec vous!'
       })
       setIsSubmitting(false)
       return
@@ -161,8 +150,7 @@ export default function Rsvp() {
         guests_brunch: 1,
         plus_one_name: '',
         dietary_restrictions: '',
-        message: '',
-        website: ''
+        message: ''
       })
     } catch (error) {
       console.error('❌ Full error object:', error)
@@ -243,19 +231,6 @@ export default function Rsvp() {
                 onChange={handleChange}
                 required
                 placeholder="votre@email.com"
-              />
-            </div>
-
-            <div className="form-group" style={{ position: 'absolute', left: '-9999px', opacity: 0, pointerEvents: 'none' }} aria-hidden="true">
-              <label htmlFor="website">Website</label>
-              <input
-                type="text"
-                id="website"
-                name="website"
-                value={formData.website}
-                onChange={handleChange}
-                tabIndex="-1"
-                autoComplete="off"
               />
             </div>
           </div>
