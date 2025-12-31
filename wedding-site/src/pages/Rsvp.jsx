@@ -118,11 +118,12 @@ export default function Rsvp() {
 
       console.log('📊 Inserting into public.rsvps table:', insertPayload)
 
-      const { error } = await supabase
+      const { data, error } = await supabase
         .from('rsvps')
         .insert([insertPayload])
+        .select()
 
-      console.log('📥 Response from Supabase insert:', { error })
+      console.log('📥 Response from Supabase insert:', { data, error })
 
       if (error) {
         console.error('❌ Supabase Error Details:', {
@@ -133,6 +134,11 @@ export default function Rsvp() {
           fullError: error
         })
         throw error
+      }
+
+      if (!data || data.length === 0) {
+        console.error('❌ No data returned from insert')
+        throw new Error('Aucune donnée retournée après l\'insertion')
       }
 
       const attendingAny = formData.attending_mairie || formData.attending_corse || formData.attending_brunch
