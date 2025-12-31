@@ -424,7 +424,7 @@
 
 .framed-subtitle {
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 400;
   color: #2c3e50;
   text-align: center;
   margin: -20px 0 30px 0;
@@ -549,6 +549,10 @@
 
 .restaurants-card-centered .item-entry {
   margin-bottom: 0;
+}
+
+.restaurants-card-centered .section-subtitle-framed {
+  font-weight: 700;
 }
 
 .restaurant-link {
