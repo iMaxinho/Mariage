@@ -484,7 +484,7 @@
 }
 
 .restaurants-card-centered .items-list {
-  gap: 8px;
+  gap: 4px;
 }
 
 .item-entry {
@@ -543,8 +543,12 @@
 }
 
 .restaurant-entry {
-  margin: 4px 0;
-  line-height: 1.2;
+  margin: 2px 0;
+  line-height: 1.1;
+}
+
+.restaurants-card-centered .item-entry {
+  margin-bottom: 0;
 }
 
 .restaurant-link {
@@ -563,12 +567,14 @@
 }
 
 .restaurants-card-centered {
-  margin-left: auto;
-  margin-right: auto;
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: 100%;
+  max-width: 600px;
 }
 
 .section-title-bold {
-  font-weight: 600;
+  font-weight: 700 !important;
 }
 
 .impatience-card {
@@ -648,6 +654,10 @@
   .activities-framed-grid {
     grid-template-columns: 1fr;
     gap: 30px;
+  }
+
+  .restaurants-card-centered {
+    grid-column: 1;
   }
 
   .framed-card {
