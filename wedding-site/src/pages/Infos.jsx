@@ -17,7 +17,7 @@ const LOCATIONS = {
     addressLink: 'https://www.google.com/maps/dir/?api=1&destination=Plage+La+Boheme+Bonifacio',
     lat: 41.3922,
     lng: 9.1575,
-    description: 'Brunch - Dimanche 7 juin à 11h30',
+    description: 'Brunch - Dimanche 7 juin à 12h30',
     image: '/la-boheme-bonifacio-photo-google-1-1753279872_2.jpg'
   }
 }
