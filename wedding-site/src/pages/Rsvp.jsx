@@ -14,7 +14,8 @@ export default function Rsvp() {
     guests_brunch: 1,
     plus_one_name: '',
     dietary_restrictions: '',
-    message: ''
+    message: '',
+    website: ''
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState(null)
@@ -78,6 +79,16 @@ export default function Rsvp() {
       return
     }
 
+    if (formData.website) {
+      console.log('🤖 Bot detected - honeypot field filled')
+      setSubmitStatus({
+        type: 'success',
+        message: 'Merci pour votre confirmation! Nous avons hâte de célébrer avec vous!'
+      })
+      setIsSubmitting(false)
+      return
+    }
+
     try {
       console.log('📤 Submitting RSVP...')
       console.log('Form data:', {
@@ -107,12 +118,11 @@ export default function Rsvp() {
 
       console.log('📊 Inserting into public.rsvps table:', insertPayload)
 
-      const { data, error } = await supabase
+      const { error } = await supabase
         .from('rsvps')
         .insert([insertPayload])
-        .select()
 
-      console.log('📥 Response from Supabase insert:', { data, error })
+      console.log('📥 Response from Supabase insert:', { error })
 
       if (error) {
         console.error('❌ Supabase Error Details:', {
@@ -123,11 +133,6 @@ export default function Rsvp() {
           fullError: error
         })
         throw error
-      }
-
-      if (!data || data.length === 0) {
-        console.error('❌ No data returned from insert')
-        throw new Error('Aucune donnée retournée après l\'insertion')
       }
 
       const attendingAny = formData.attending_mairie || formData.attending_corse || formData.attending_brunch
@@ -150,7 +155,8 @@ export default function Rsvp() {
         guests_brunch: 1,
         plus_one_name: '',
         dietary_restrictions: '',
-        message: ''
+        message: '',
+        website: ''
       })
     } catch (error) {
       console.error('❌ Full error object:', error)
@@ -231,6 +237,19 @@ export default function Rsvp() {
                 onChange={handleChange}
                 required
                 placeholder="votre@email.com"
+              />
+            </div>
+
+            <div className="form-group" style={{ position: 'absolute', left: '-9999px', opacity: 0, pointerEvents: 'none' }} aria-hidden="true">
+              <label htmlFor="website">Website</label>
+              <input
+                type="text"
+                id="website"
+                name="website"
+                value={formData.website}
+                onChange={handleChange}
+                tabIndex="-1"
+                autoComplete="off"
               />
             </div>
           </div>
