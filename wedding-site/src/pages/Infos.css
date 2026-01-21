@@ -363,6 +363,56 @@
   text-decoration: underline;
 }
 
+.pricing-grid {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.pricing-title {
+  font-size: 15px;
+  color: #333;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+}
+
+.pricing-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.pricing-item:last-of-type {
+  border-bottom: none;
+}
+
+.pricing-service {
+  font-size: 14px;
+  color: #555;
+  flex: 1;
+}
+
+.pricing-price {
+  font-size: 14px;
+  color: #8b9d83;
+  font-weight: 600;
+  margin-left: 12px;
+}
+
+.travel-fees {
+  margin-top: 16px;
+  font-size: 13px;
+  color: #666;
+  line-height: 1.5;
+  font-style: italic;
+  padding: 12px;
+  background: #f9f9f9;
+  border-radius: 6px;
+  border-left: 3px solid #8b9d83;
+}
+
 .activities-section {
   background: transparent;
   padding: 0;

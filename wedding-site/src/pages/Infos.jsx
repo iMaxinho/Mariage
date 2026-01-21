@@ -121,7 +121,17 @@ const SERVICES = [
         address: 'Bonifacio',
         phone: '06 09 96 15 27',
         description: 'Coiffure sur rendez-vous',
-        instagram: 'mariegabriellehairstylist'
+        instagram: 'mariegabriellehairstylist',
+        pricing: [
+          { service: 'Chignon', price: '80 euros' },
+          { service: 'Demi-attache / tresse cheveux longs', price: '70 euros' },
+          { service: 'Demi-attache tresse cheveux mi-longs (clavicule)', price: '60 euros' },
+          { service: 'Coiffage wavy / raide / bouclé cheveux longs', price: '50 euros' },
+          { service: 'Coiffage wavy / raide / bouclé cheveux mi longs', price: '40 euros' },
+          { service: 'Coiffage wavy / raide / bouclé cheveux courts', price: '30 euros' },
+          { service: 'boucle Au fer', price: '40 euros' }
+        ],
+        travelFees: 'Frais de déplacement compris jusqu\'à 30 km à partir de Bonifacio, les frais de déplacement seront facturés 0,70 centimes le kilomètre'
       }
     ]
   }
@@ -409,6 +419,20 @@ export default function Infos() {
                           <a href={item.website} target="_blank" rel="noopener noreferrer" className="link">
                             Site web
                           </a>
+                        )}
+                        {item.pricing && (
+                          <div className="pricing-grid">
+                            <h4 className="pricing-title">Tarifs :</h4>
+                            {item.pricing.map((priceItem, idx) => (
+                              <div key={idx} className="pricing-item">
+                                <span className="pricing-service">{priceItem.service}</span>
+                                <span className="pricing-price">{priceItem.price}</span>
+                              </div>
+                            ))}
+                            {item.travelFees && (
+                              <p className="travel-fees">{item.travelFees}</p>
+                            )}
+                          </div>
                         )}
                       </div>
                     ))}
