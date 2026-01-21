@@ -115,6 +115,13 @@ const SERVICES = [
         address: 'Porto-Vecchio',
         phone: '+33 6 23 45 67 89',
         description: 'Service à domicile disponible pour la journée du mariage'
+      },
+      {
+        name: 'Marie-Gabrielle hairstylist',
+        address: 'Bonifacio',
+        phone: '06 09 96 15 27',
+        description: 'Coiffure sur rendez-vous',
+        instagram: 'mariegabriellehairstylist'
       }
     ]
   }
@@ -391,6 +398,11 @@ export default function Infos() {
                         {item.phone && (
                           <p className="service-contact">
                             📞 <a href={`tel:${item.phone}`}>{item.phone}</a>
+                          </p>
+                        )}
+                        {item.instagram && (
+                          <p className="service-contact">
+                            📷 <a href={`https://instagram.com/${item.instagram}`} target="_blank" rel="noopener noreferrer">@{item.instagram}</a>
                           </p>
                         )}
                         {item.website && (
