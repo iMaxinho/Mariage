@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 60px 20px;
+  padding: 80px 20px;
   width: 100%;
   overflow-x: hidden;
 }
@@ -12,66 +12,128 @@
 .cadeaux-container {
   max-width: 600px;
   width: 100%;
+  text-align: center;
 }
 
 .page-title {
-  font-size: 48px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 52px;
   text-align: center;
-  color: #333;
-  margin: 0 0 60px 0;
-  font-weight: 700;
+  color: #2c2c2c;
+  margin: 0 0 32px 0;
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
-.placeholder-card {
-  background: white;
-  padding: 60px 40px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  text-align: center;
+.cadeaux-intro {
+  margin-bottom: 48px;
 }
 
-.placeholder-icon {
-  font-size: 64px;
-  margin-bottom: 24px;
-  display: block;
-}
-
-.placeholder-card h2 {
-  font-size: 28px;
-  color: #333;
-  margin: 0 0 16px 0;
-  font-weight: 700;
-}
-
-.placeholder-card p {
+.cadeaux-intro p {
   font-size: 16px;
   color: #666;
-  margin: 12px 0;
+  line-height: 1.8;
+  max-width: 480px;
+  margin: 0 auto;
+  font-style: italic;
+}
+
+.cadeaux-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  border: 1px solid rgba(139, 157, 131, 0.15);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.cadeaux-card:hover {
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.cadeaux-card-content {
+  padding: 56px 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.cadeaux-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #f0f4ee 0%, #e8ede5 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.cadeaux-card h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  color: #2c2c2c;
+  margin: 0;
+  font-weight: 600;
+}
+
+.cadeaux-card p {
+  font-size: 15px;
+  color: #888;
+  margin: 0;
   line-height: 1.6;
 }
 
-.subtitle {
-  color: #8b9d83;
+.cadeaux-btn {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 16px 40px;
+  background: #8b9d83;
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
   font-size: 15px;
-  margin-top: 20px;
   font-weight: 500;
+  letter-spacing: 0.05em;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 16px rgba(139, 157, 131, 0.3);
+}
+
+.cadeaux-btn:hover {
+  background: #7a8d72;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(139, 157, 131, 0.4);
+}
+
+.cadeaux-btn:active {
+  transform: translateY(0);
+}
+
+.cadeaux-note {
+  margin-top: 40px;
+  font-size: 14px;
+  color: #aaa;
+  font-style: italic;
 }
 
 @media (max-width: 768px) {
   .page-title {
-    font-size: 36px;
-    margin-bottom: 40px;
+    font-size: 38px;
+    margin-bottom: 24px;
   }
 
-  .placeholder-card {
-    padding: 40px 24px;
+  .cadeaux-card-content {
+    padding: 40px 28px;
   }
 
-  .placeholder-icon {
-    font-size: 48px;
-  }
-
-  .placeholder-card h2 {
+  .cadeaux-card h2 {
     font-size: 24px;
+  }
+
+  .cadeaux-btn {
+    padding: 14px 32px;
+    font-size: 14px;
   }
 }
